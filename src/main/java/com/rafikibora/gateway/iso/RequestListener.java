@@ -14,13 +14,6 @@ public class RequestListener implements ISORequestListener {
     public boolean process(ISOSource sender, ISOMsg request) {
         try {
             String mti = request.getMTI();
-            if ("0800".equals(mti)) {
-                ISOMsg response = (ISOMsg) request.clone();
-                response.setMTI("0810");
-                response.set(39, "00");
-                sender.send(response);
-                return true;
-            }
 
             if("0200".equals(mti)){
                 String processingCode = request.getString(3);
