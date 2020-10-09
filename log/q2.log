@@ -8151,3 +8151,796 @@ q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
   </trace>
 </log>
 </logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 17:12:44.683 EAT 2020" lifespan="722ms">
+  <info>
+    Q2 started, deployDir=E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:12:44.712 EAT 2020" lifespan="9ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:12:44.716 EAT 2020" lifespan="3ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:12:45.750 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 17:12:45.751 EAT 2020">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:12:45.752 EAT 2020" lifespan="1ms">
+  <info>
+               OS: Windows 10
+             host: TRCM-ACDM5/192.168.56.1
+          version: 2.0.0 (be6e219)
+         instance: fbe3f3d8-6bdc-42e6-a8f4-588f7d70951b
+           uptime: 00:00:03.130
+       processors: 12
+           drift : 0
+    memory(t/u/f): 126/14/111
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Attach Listener,5,system]
+            Thread[Notification Thread,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-fbe3f3d8-6bdc-42e6-a8f4-588f7d70951b,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:50708" at="Fri Oct 09 17:17:13.621 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:50708" at="Fri Oct 09 17:17:50.995 EAT 2020" lifespan="37373ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="B018"/>
+      <field id="25" value="00"/>
+      <field id="33" value=""/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:50708" at="Fri Oct 09 17:19:29.375 EAT 2020" lifespan="98378ms">
+  <receive>
+    <peer-disconnect/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:50708" at="Fri Oct 09 17:19:29.377 EAT 2020">
+  <session-end/>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:50735" at="Fri Oct 09 17:19:30.901 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:50735" at="Fri Oct 09 17:19:37.642 EAT 2020" lifespan="6740ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="B018"/>
+      <field id="25" value="00"/>
+      <field id="33" value=""/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:50735" at="Fri Oct 09 17:21:30.443 EAT 2020" lifespan="112800ms">
+  <receive>
+    <peer-disconnect/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:50735" at="Fri Oct 09 17:21:30.443 EAT 2020">
+  <session-end/>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:50773" at="Fri Oct 09 17:21:31.814 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:50773" at="Fri Oct 09 17:21:34.443 EAT 2020" lifespan="2629ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:50773" at="Fri Oct 09 17:26:34.930 EAT 2020" lifespan="300001ms">
+  <receive>
+    <io-timeout/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:50773" at="Fri Oct 09 17:26:34.931 EAT 2020">
+  <session-end/>
+</log>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 17:26:42.954 EAT 2020" lifespan="247ms">
+  <info>
+    Q2 started, deployDir=E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:26:42.977 EAT 2020" lifespan="7ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:26:42.983 EAT 2020" lifespan="4ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:26:43.225 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 17:26:43.227 EAT 2020">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:26:43.229 EAT 2020" lifespan="1ms">
+  <info>
+               OS: Windows 10
+             host: TRCM-ACDM5/192.168.56.1
+          version: 2.0.0 (be6e219)
+         instance: 0347ed76-fafe-4215-8a4f-8498194b7b94
+           uptime: 00:00:00.736
+       processors: 12
+           drift : 0
+    memory(t/u/f): 126/14/111
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Attach Listener,5,system]
+            Thread[Notification Thread,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-0347ed76-fafe-4215-8a4f-8498194b7b94,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:50864" at="Fri Oct 09 17:26:49.471 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:50864" at="Fri Oct 09 17:26:52.219 EAT 2020" lifespan="2748ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:50864" at="Fri Oct 09 17:26:52.367 EAT 2020" lifespan="1ms">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="39" value="000"/>
+      <field id="102" value="001"/>
+      <field id="105" value="ndyhstxbH78"/>
+    </isomsg>
+    <iso-exception>
+      error packing field 39
+      <iso-exception>
+        org.jpos.iso.IF_CHAR: Problem packing field 39
+        <iso-exception>
+          Field length 3 too long. Max: 2
+          org.jpos.iso.ISOException: Field length 3 too long. Max: 2
+	at org.jpos.iso.ISOStringFieldPackager.pack(ISOStringFieldPackager.java:147)
+	at org.jpos.iso.ISOBasePackager.pack(ISOBasePackager.java:119)
+	at org.jpos.iso.ISOMsg.pack(ISOMsg.java:442)
+	at org.jpos.iso.BaseChannel.send(BaseChannel.java:583)
+	at com.rafikibora.gateway.iso.RequestListener.process(RequestListener.java:32)
+	at org.jpos.iso.ISOServer$Session.run(ISOServer.java:161)
+	at org.jpos.util.ThreadPool$PooledThread.run(ThreadPool.java:72)
+        </iso-exception>
+        org.jpos.iso.ISOException: org.jpos.iso.IF_CHAR: Problem packing field 39 (org.jpos.iso.ISOException: Field length 3 too long. Max: 2)
+	at org.jpos.iso.ISOStringFieldPackager.pack(ISOStringFieldPackager.java:157)
+	at org.jpos.iso.ISOBasePackager.pack(ISOBasePackager.java:119)
+	at org.jpos.iso.ISOMsg.pack(ISOMsg.java:442)
+	at org.jpos.iso.BaseChannel.send(BaseChannel.java:583)
+	at com.rafikibora.gateway.iso.RequestListener.process(RequestListener.java:32)
+	at org.jpos.iso.ISOServer$Session.run(ISOServer.java:161)
+	at org.jpos.util.ThreadPool$PooledThread.run(ThreadPool.java:72)
+Nested:org.jpos.iso.ISOException: Field length 3 too long. Max: 2
+	at org.jpos.iso.ISOStringFieldPackager.pack(ISOStringFieldPackager.java:147)
+	at org.jpos.iso.ISOBasePackager.pack(ISOBasePackager.java:119)
+	at org.jpos.iso.ISOMsg.pack(ISOMsg.java:442)
+	at org.jpos.iso.BaseChannel.send(BaseChannel.java:583)
+	at com.rafikibora.gateway.iso.RequestListener.process(RequestListener.java:32)
+	at org.jpos.iso.ISOServer$Session.run(ISOServer.java:161)
+	at org.jpos.util.ThreadPool$PooledThread.run(ThreadPool.java:72)
+      </iso-exception>
+      org.jpos.iso.ISOException: error packing field 39 (org.jpos.iso.ISOException: org.jpos.iso.IF_CHAR: Problem packing field 39 (org.jpos.iso.ISOException: Field length 3 too long. Max: 2))
+	at org.jpos.iso.ISOBasePackager.pack(ISOBasePackager.java:128)
+	at org.jpos.iso.ISOMsg.pack(ISOMsg.java:442)
+	at org.jpos.iso.BaseChannel.send(BaseChannel.java:583)
+	at com.rafikibora.gateway.iso.RequestListener.process(RequestListener.java:32)
+	at org.jpos.iso.ISOServer$Session.run(ISOServer.java:161)
+	at org.jpos.util.ThreadPool$PooledThread.run(ThreadPool.java:72)
+Nested:org.jpos.iso.ISOException: org.jpos.iso.IF_CHAR: Problem packing field 39 (org.jpos.iso.ISOException: Field length 3 too long. Max: 2)
+	at org.jpos.iso.ISOStringFieldPackager.pack(ISOStringFieldPackager.java:157)
+	at org.jpos.iso.ISOBasePackager.pack(ISOBasePackager.java:119)
+	at org.jpos.iso.ISOMsg.pack(ISOMsg.java:442)
+	at org.jpos.iso.BaseChannel.send(BaseChannel.java:583)
+	at com.rafikibora.gateway.iso.RequestListener.process(RequestListener.java:32)
+	at org.jpos.iso.ISOServer$Session.run(ISOServer.java:161)
+	at org.jpos.util.ThreadPool$PooledThread.run(ThreadPool.java:72)
+Nested:org.jpos.iso.ISOException: Field length 3 too long. Max: 2
+	at org.jpos.iso.ISOStringFieldPackager.pack(ISOStringFieldPackager.java:147)
+	at org.jpos.iso.ISOBasePackager.pack(ISOBasePackager.java:119)
+	at org.jpos.iso.ISOMsg.pack(ISOMsg.java:442)
+	at org.jpos.iso.BaseChannel.send(BaseChannel.java:583)
+	at com.rafikibora.gateway.iso.RequestListener.process(RequestListener.java:32)
+	at org.jpos.iso.ISOServer$Session.run(ISOServer.java:161)
+	at org.jpos.util.ThreadPool$PooledThread.run(ThreadPool.java:72)
+    </iso-exception>
+  </send>
+</log>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 17:29:33.232 EAT 2020" lifespan="174ms">
+  <info>
+    Q2 started, deployDir=E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:29:33.249 EAT 2020" lifespan="8ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:29:33.253 EAT 2020" lifespan="4ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:29:33.483 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 17:29:33.484 EAT 2020">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:29:33.485 EAT 2020" lifespan="1ms">
+  <info>
+               OS: Windows 10
+             host: TRCM-ACDM5/192.168.56.1
+          version: 2.0.0 (be6e219)
+         instance: 2d7466c1-1ff7-420a-aedc-1e884f69a308
+           uptime: 00:00:00.622
+       processors: 12
+           drift : 0
+    memory(t/u/f): 126/14/111
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Attach Listener,5,system]
+            Thread[Notification Thread,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-2d7466c1-1ff7-420a-aedc-1e884f69a308,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:50908" at="Fri Oct 09 17:29:42.470 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:50908" at="Fri Oct 09 17:29:44.427 EAT 2020" lifespan="1956ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:50908" at="Fri Oct 09 17:29:44.478 EAT 2020" lifespan="1ms">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="39" value="00"/>
+      <field id="102" value="001"/>
+      <field id="105" value="ndyhstxbH78"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="channel/127.0.0.1:50908" at="Fri Oct 09 17:34:44.479 EAT 2020" lifespan="300001ms">
+  <receive>
+    <io-timeout/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:50908" at="Fri Oct 09 17:34:44.479 EAT 2020">
+  <session-end/>
+</log>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 17:36:10.108 EAT 2020" lifespan="188ms">
+  <info>
+    Q2 started, deployDir=E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:36:10.126 EAT 2020" lifespan="8ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:36:10.131 EAT 2020" lifespan="4ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:36:10.383 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:36:10.385 EAT 2020">
+  <info>
+               OS: Windows 10
+             host: TRCM-ACDM5/192.168.56.1
+          version: 2.0.0 (be6e219)
+         instance: ad4073f1-09ae-4a58-8ee9-2ac15d0494c3
+           uptime: 00:00:00.668
+       processors: 12
+           drift : 0
+    memory(t/u/f): 126/14/111
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Attach Listener,5,system]
+            Thread[Notification Thread,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-ad4073f1-09ae-4a58-8ee9-2ac15d0494c3,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 17:36:10.400 EAT 2020" lifespan="16ms">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:51019" at="Fri Oct 09 17:36:16.462 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:51019" at="Fri Oct 09 17:36:18.023 EAT 2020" lifespan="1560ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:51019" at="Fri Oct 09 17:36:18.161 EAT 2020">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="39" value="00"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </send>
+</log>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 17:40:59.827 EAT 2020" lifespan="189ms">
+  <info>
+    Q2 started, deployDir=E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:40:59.842 EAT 2020" lifespan="5ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 17:40:59.848 EAT 2020" lifespan="6ms">
+  <info>
+    deploy: E:\Docs\DevFiles\JEWorkspace\rafikibora-gateway\deploy\99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:41:00.089 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 17:41:00.090 EAT 2020">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 17:41:00.091 EAT 2020" lifespan="1ms">
+  <info>
+               OS: Windows 10
+             host: TRCM-ACDM5/192.168.56.1
+          version: 2.0.0 (be6e219)
+         instance: 9af121dc-78b0-42a8-a27a-7b36fb88b185
+           uptime: 00:00:00.649
+       processors: 12
+           drift : 0
+    memory(t/u/f): 126/13/112
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Attach Listener,5,system]
+            Thread[Notification Thread,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-9af121dc-78b0-42a8-a27a-7b36fb88b185,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:51106" at="Fri Oct 09 17:41:13.431 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:51106" at="Fri Oct 09 17:41:15.067 EAT 2020" lifespan="1635ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:51106" at="Fri Oct 09 17:41:15.206 EAT 2020">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="39" value="16"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="channel/127.0.0.1:51106" at="Fri Oct 09 17:42:02.681 EAT 2020" lifespan="47474ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:51106" at="Fri Oct 09 17:42:02.795 EAT 2020">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="011000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="39" value="00"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="channel/127.0.0.1:51106" at="Fri Oct 09 17:47:02.797 EAT 2020" lifespan="300001ms">
+  <receive>
+    <io-timeout/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:51106" at="Fri Oct 09 17:47:02.797 EAT 2020">
+  <session-end/>
+</log>
