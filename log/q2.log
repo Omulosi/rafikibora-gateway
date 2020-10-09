@@ -7949,3 +7949,1014 @@ q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
   </trace>
 </log>
 </logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 15:06:52.526 EAT 2020" lifespan="565ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:06:52.539 EAT 2020" lifespan="10ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:06:52.550 EAT 2020" lifespan="9ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:06:53.113 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 15:06:53.115 EAT 2020" lifespan="1ms">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:06:53.116 EAT 2020" lifespan="1ms">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: 908371f2-a3fe-466e-98cd-3b1530f2dcb0
+           uptime: 00:00:02.473
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/32/85
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-908371f2-a3fe-466e-98cd-3b1530f2dcb0,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:35216" at="Fri Oct 09 15:08:01.887 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:35216" at="Fri Oct 09 15:08:26.985 EAT 2020" lifespan="25094ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0800"/>
+      <field id="2" value="123"/>
+      <field id="7" value="1115144400"/>
+      <field id="11" value="123456"/>
+      <field id="33" value="123"/>
+      <field id="72" value="301&#13;"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:35216" at="Fri Oct 09 15:08:26.996 EAT 2020" lifespan="3ms">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0810"/>
+      <field id="2" value="123"/>
+      <field id="7" value="1115144400"/>
+      <field id="11" value="123456"/>
+      <field id="33" value="123"/>
+      <field id="39" value="00"/>
+      <field id="72" value="301&#13;"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="channel/127.0.0.1:35216" at="Fri Oct 09 15:09:04.183 EAT 2020" lifespan="37179ms">
+  <receive>
+    <iso-exception>
+      Invalid message length ����
+      org.jpos.iso.ISOException: Invalid message length ����
+	at org.jpos.iso.channel.ASCIIChannel.getMessageLength(ASCIIChannel.java:100)
+	at org.jpos.iso.BaseChannel.receive(BaseChannel.java:699)
+	at org.jpos.iso.ISOServer$Session.run(ISOServer.java:156)
+	at org.jpos.util.ThreadPool$PooledThread.run(ThreadPool.java:72)
+    </iso-exception>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:35216" at="Fri Oct 09 15:09:04.191 EAT 2020">
+  <session-error>
+    <iso-exception>
+      Invalid message length ����
+      org.jpos.iso.ISOException: Invalid message length ����
+	at org.jpos.iso.channel.ASCIIChannel.getMessageLength(ASCIIChannel.java:100)
+	at org.jpos.iso.BaseChannel.receive(BaseChannel.java:699)
+	at org.jpos.iso.ISOServer$Session.run(ISOServer.java:156)
+	at org.jpos.util.ThreadPool$PooledThread.run(ThreadPool.java:72)
+    </iso-exception>
+  </session-error>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:35216" at="Fri Oct 09 15:09:04.199 EAT 2020">
+  <session-end/>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:35234" at="Fri Oct 09 15:09:06.520 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:35234" at="Fri Oct 09 15:09:10.964 EAT 2020" lifespan="4443ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="341000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:35234" at="Fri Oct 09 15:09:11.035 EAT 2020" lifespan="1ms">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0210"/>
+      <field id="2" value="001"/>
+      <field id="3" value="341000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="39" value="00"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="channel/127.0.0.1:35234" at="Fri Oct 09 15:14:11.134 EAT 2020" lifespan="300097ms">
+  <receive>
+    <io-timeout/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:35234" at="Fri Oct 09 15:14:11.136 EAT 2020">
+  <session-end/>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:35884" at="Fri Oct 09 15:36:36.079 EAT 2020">
+  <session-start/>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:38:30.495 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:38:30.996 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:38:30.997 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:38:30.998 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:38:30.999 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:38:31.003 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:38:31.004 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+<log realm="channel/127.0.0.1:35884" at="Fri Oct 09 15:38:31.005 EAT 2020" lifespan="114925ms">
+  <receive>
+    <peer-disconnect/>
+  </receive>
+</log>
+</logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 15:38:38.978 EAT 2020" lifespan="621ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:38:38.989 EAT 2020" lifespan="8ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:38:38.998 EAT 2020" lifespan="7ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:38:39.609 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 15:38:39.614 EAT 2020" lifespan="1ms">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:38:39.615 EAT 2020" lifespan="2ms">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: 9eed4ee3-1aff-43b4-88f1-a05e343d39db
+           uptime: 00:00:01.707
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/31/86
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-9eed4ee3-1aff-43b4-88f1-a05e343d39db,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:35930" at="Fri Oct 09 15:38:57.174 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:35930" at="Fri Oct 09 15:39:02.350 EAT 2020" lifespan="5172ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="211000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:35930" at="Fri Oct 09 15:39:02.427 EAT 2020" lifespan="1ms">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0210"/>
+      <field id="2" value="001"/>
+      <field id="3" value="211000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:41:09.137 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:41:09.652 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:41:09.653 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:41:09.655 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:41:09.656 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:41:09.659 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:41:09.661 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+</logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 15:41:14.770 EAT 2020" lifespan="634ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:41:14.786 EAT 2020" lifespan="12ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:41:14.796 EAT 2020" lifespan="7ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:41:15.370 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 15:41:15.375 EAT 2020" lifespan="4ms">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:41:15.377 EAT 2020">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: a3f1208a-18f8-479e-b259-edfd9c9c15c0
+           uptime: 00:00:01.688
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/32/85
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-a3f1208a-18f8-479e-b259-edfd9c9c15c0,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:36018" at="Fri Oct 09 15:43:28.102 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:36018" at="Fri Oct 09 15:43:40.645 EAT 2020" lifespan="12542ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="211000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:36018" at="Fri Oct 09 15:43:40.764 EAT 2020">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0210"/>
+      <field id="2" value="001"/>
+      <field id="3" value="211000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:44:00.145 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:44:00.428 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:44:00.431 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:44:00.434 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:44:00.437 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:44:00.443 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="channel/127.0.0.1:36018" at="Fri Oct 09 15:44:00.452 EAT 2020" lifespan="19686ms">
+  <receive>
+    <peer-disconnect/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:36018" at="Fri Oct 09 15:44:00.455 EAT 2020">
+  <session-end/>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:44:00.458 EAT 2020" lifespan="6ms">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+</logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 15:44:04.253 EAT 2020" lifespan="506ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:44:04.267 EAT 2020" lifespan="10ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:44:04.274 EAT 2020" lifespan="6ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:44:05.166 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:44:05.168 EAT 2020">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: b2d99bc9-594b-49ab-ba00-a1d1bc1e46a8
+           uptime: 00:00:01.916
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/32/85
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-b2d99bc9-594b-49ab-ba00-a1d1bc1e46a8,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 15:44:05.178 EAT 2020" lifespan="10ms">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:36032" at="Fri Oct 09 15:44:12.791 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:36032" at="Fri Oct 09 15:44:15.706 EAT 2020" lifespan="2912ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="211000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:36032" at="Fri Oct 09 15:44:15.827 EAT 2020" lifespan="1ms">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0210"/>
+      <field id="2" value="001"/>
+      <field id="3" value="211000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="channel/127.0.0.1:36032" at="Fri Oct 09 15:49:15.930 EAT 2020" lifespan="300101ms">
+  <receive>
+    <io-timeout/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:36032" at="Fri Oct 09 15:49:15.935 EAT 2020">
+  <session-end/>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:56:26.885 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:56:27.865 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:56:27.868 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:56:27.871 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:56:27.872 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:56:27.874 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:56:27.875 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+</logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 15:56:30.875 EAT 2020" lifespan="487ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:56:30.892 EAT 2020" lifespan="13ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 15:56:30.900 EAT 2020" lifespan="7ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:56:31.464 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 15:56:31.469 EAT 2020">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: 25279b81-b940-4995-97a4-fc5a14d23dd2
+           uptime: 00:00:01.594
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/31/86
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-25279b81-b940-4995-97a4-fc5a14d23dd2,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 15:56:31.482 EAT 2020" lifespan="16ms">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 16:20:14.332 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 16:20:16.753 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 16:20:16.755 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 16:20:16.756 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 16:20:16.757 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 16:20:16.761 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 16:20:16.762 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+</logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Fri Oct 09 16:20:20.899 EAT 2020" lifespan="505ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 16:20:20.911 EAT 2020" lifespan="8ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 16:20:20.918 EAT 2020" lifespan="6ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 16:20:21.459 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Fri Oct 09 16:20:21.465 EAT 2020" lifespan="5ms">
+  <iso-server>
+    listening on port 10000
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 16:20:21.467 EAT 2020">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: 79f31a44-b536-428d-8830-88160df9b859
+           uptime: 00:00:01.807
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/31/86
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-79f31a44-b536-428d-8830-88160df9b859,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:36760" at="Fri Oct 09 16:20:41.678 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:36760" at="Fri Oct 09 16:20:45.535 EAT 2020" lifespan="3854ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="001"/>
+      <field id="3" value="211000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:36760" at="Fri Oct 09 16:20:45.668 EAT 2020" lifespan="1ms">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0210"/>
+      <field id="2" value="001"/>
+      <field id="3" value="211000"/>
+      <field id="7" value="1115112500"/>
+      <field id="11" value="123456"/>
+      <field id="12" value="112500"/>
+      <field id="13" value="1115"/>
+      <field id="15" value="1115"/>
+      <field id="18" value="6012"/>
+      <field id="29" value="C00000000"/>
+      <field id="31" value="C00000000"/>
+      <field id="102" value="001"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="channel/127.0.0.1:36760" at="Fri Oct 09 16:25:45.771 EAT 2020" lifespan="300101ms">
+  <receive>
+    <io-timeout/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:36760" at="Fri Oct 09 16:25:45.775 EAT 2020">
+  <session-end/>
+</log>

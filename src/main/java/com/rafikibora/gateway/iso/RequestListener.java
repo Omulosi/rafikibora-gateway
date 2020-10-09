@@ -29,6 +29,8 @@ public class RequestListener implements ISORequestListener {
                 switch (processingCode) {
                     // Deposit TTC
                     case "21":
+                        ISOMsg respnseISOMsg = transactionProcessor.processDeposit(request);
+                        sender.send(respnseISOMsg);
                         break;
                     // Purchase TTC
                     case "00":
