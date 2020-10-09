@@ -25,7 +25,7 @@ public class HttpClient {
 
             result = result.trim();
         } catch (Exception ex) {
-            Logger.getLogger(com.rafikibora.gateway.service.RequestService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(HttpClient.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return  result;
@@ -40,16 +40,12 @@ public class HttpClient {
             result =  httpClient.getForObject(url, HashMap.class);
 
         } catch (Exception ex) {
-            Logger.getLogger(com.rafikibora.gateway.service.RequestService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(HttpClient.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
     }
 
-    public static void main(String[] args) {
-        com.rafikibora.gateway.service.RequestService requestService = new com.rafikibora.gateway.service.RequestService();
-        Map<String, Object> data = requestService.get("http://localhost:2019/api/rekening/");
-        System.out.println(data);
-    }
+
 
 }
 
