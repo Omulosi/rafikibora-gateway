@@ -13,17 +13,15 @@ public class HttpClient {
     /* Returns response status as a String - Ok or otherwise
 
      */
-    public String post (String url, HashMap data) {
+    public HashMap post (String url, HashMap data) {
         RestTemplate httpClient = new RestTemplate();
 
-        String result = null;
+        HashMap result = null;
 
         try {
             result = httpClient.postForObject(url,
                     data,
-                    String.class);
-
-            result = result.trim();
+                    HashMap.class);
         } catch (Exception ex) {
             Logger.getLogger(HttpClient.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -44,8 +42,5 @@ public class HttpClient {
         }
         return result;
     }
-
-
-
 }
 
