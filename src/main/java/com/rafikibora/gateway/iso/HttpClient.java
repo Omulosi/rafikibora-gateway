@@ -13,7 +13,7 @@ public class HttpClient {
     /* Returns response status as a String - Ok or otherwise
 
      */
-    public HashMap post (String url, HashMap data) {
+    public HashMap post (String url, Map data) {
         RestTemplate httpClient = new RestTemplate();
 
         HashMap result = null;

@@ -33,10 +33,10 @@ public class RequestListener implements ISORequestListener {
 
                         break;
                     // Send money TTC (40)
-//                    case "34":
-//                        ISOMsg responseISOMsg = transactionProcessor.processSendMoney(request);
-//                        sender.send(responseISOMsg);
-//                        return true;
+                    case "34":
+                        ISOMsg responseISOMsg = transactionProcessor.processSendMoney(request);
+                        sender.send(responseISOMsg);
+                       return true;
                     default:
                         return false;
                 }
