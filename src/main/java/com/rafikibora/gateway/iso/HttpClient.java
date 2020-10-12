@@ -10,9 +10,10 @@ import java.util.logging.Logger;
 public class HttpClient {
     RestTemplate httpClient = new RestTemplate();
 
-    public HashMap post (String url, HashMap data) {
+    public HashMap post (String url, Map data) {
         RestTemplate httpClient = new RestTemplate();
         HashMap result = null;
+
         try {
             result = httpClient.postForObject(url,
                     data,
@@ -34,8 +35,5 @@ public class HttpClient {
         }
         return result;
     }
-
-
-
 }
 
