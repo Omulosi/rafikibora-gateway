@@ -18,9 +18,9 @@
       class="org.jpos.iso.IFA_BITMAP"/>
   <isofield
       id="2"
-      length="19"
+      length="16"
       name="PAN - PRIMARY ACCOUNT NUMBER"
-      class="org.jpos.iso.IFA_LLNUM"/>
+      class="org.jpos.iso.IFA_NUMERIC"/>
   <isofield
       id="3"
       length="6"
@@ -248,9 +248,9 @@
       class="org.jpos.iso.IFA_LLLCHAR"/>
   <isofield
       id="48"
-      length="999"
+      length="9"
       name="ADITIONAL DATA - PRIVATE"
-      class="org.jpos.iso.IFA_LLLCHAR"/>
+      class="org.jpos.iso.IF_CHAR"/>
   <isofield
       id="49"
       length="3"
@@ -518,14 +518,14 @@
       class="org.jpos.iso.IFA_LLCHAR"/>
   <isofield
       id="102"
-      length="28"
+      length="10"
       name="ACCOUNT IDENTIFICATION 1"
-      class="org.jpos.iso.IFA_LLCHAR"/>
+      class="org.jpos.iso.IFA_NUMERIC"/>
   <isofield
       id="103"
-      length="28"
+      length="10"
       name="ACCOUNT IDENTIFICATION 2"
-      class="org.jpos.iso.IFA_LLCHAR"/>
+      class="org.jpos.iso.IFA_NUMERIC"/>
   <isofield
       id="104"
       length="99"
@@ -608,19 +608,19 @@
       class="org.jpos.iso.IFA_LLLCHAR"/>
   <isofield
       id="120"
-      length="999"
+      length="30"
       name="RESERVED PRIVATE USE"
-      class="org.jpos.iso.IFA_LLLCHAR"/>
+      class="org.jpos.iso.IF_CHAR"/>
   <isofield
       id="121"
-      length="999"
+      length="30"
       name="RESERVED PRIVATE USE"
-      class="org.jpos.iso.IFA_LLLCHAR"/>
+      class="org.jpos.iso.IF_CHAR"/>
   <isofield
       id="122"
-      length="999"
+      length="500"
       name="RESERVED PRIVATE USE"
-      class="org.jpos.iso.IFA_LLLCHAR"/>
+      class="org.jpos.iso.IF_CHAR"/>
   <isofield
       id="123"
       length="999"
