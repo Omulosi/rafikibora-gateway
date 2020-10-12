@@ -30,7 +30,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             String receiverAccount = request.getString(103); // Account Identification 2
 
             // Assemble data to send to backend
-            Map<String, Object> transactionData= new HashMap<>();
+            Map<String, Object> transactionData = new HashMap<>();
             transactionData.put("amount", amount);
             transactionData.put(transmissionDateTime, transmissionDateTime);
 //            transactionData.put(transmissionDateTimeLocal, transmissionDateTimeLocal);

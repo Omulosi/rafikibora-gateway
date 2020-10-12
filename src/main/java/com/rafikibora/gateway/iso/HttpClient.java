@@ -1,6 +1,7 @@
 package com.rafikibora.gateway.iso;
 
 import org.springframework.web.client.RestTemplate;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -13,7 +14,7 @@ public class HttpClient {
     /* Returns response status as a String - Ok or otherwise
 
      */
-    public HashMap post (String url, Map data) {
+    public HashMap post(String url, Map data) {
         RestTemplate httpClient = new RestTemplate();
 
         HashMap result = null;
@@ -26,16 +27,16 @@ public class HttpClient {
             Logger.getLogger(HttpClient.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return  result;
+        return result;
     }
 
 
     // Returns response data as a Map object
-    public HashMap get (String url) {
+    public HashMap get(String url) {
         //RestTemplate httpClient = new RestTemplate();
         HashMap result = null;
         try {
-            result =  httpClient.getForObject(url, HashMap.class);
+            result = httpClient.getForObject(url, HashMap.class);
 
         } catch (Exception ex) {
             Logger.getLogger(HttpClient.class.getName()).log(Level.SEVERE, null, ex);
