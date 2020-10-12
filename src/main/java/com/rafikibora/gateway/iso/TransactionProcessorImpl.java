@@ -12,11 +12,9 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
     @Override
     public ISOMsg processSendMoney(ISOMsg request) {
-        String SEND_MONEY_ENDPOINT = "";
-
-        String name = "nama";
-        String salary = "saldo";
+        String SEND_MONEY_ENDPOINT = "http://localhost:2019/api/send_money";
         ISOMsg response = null;
+
         try {
 
             String amount = request.getString(4);
@@ -48,11 +46,10 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             response = (ISOMsg) request.clone();
             response.setMTI("0210");
 
-
             response.set(39, postResponse.get("code").toString()); // response code
             response.set(104, postResponse.get("message").toString()); // Transaction description
             response.set(7, postResponse.get("timestamp").toString()); // Transmission date and time
-            
+
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }

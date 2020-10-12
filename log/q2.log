@@ -8364,3 +8364,39 @@ q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
 
   </version>
 </log>
+<log realm="Q2.system" at="Fri Oct 09 18:43:59.974 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 18:44:01.413 EAT 2020">
+  <trace>
+    undeploying:/home/jp/Desktop/java-stuff/tracom-final-project/rafikibora/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Fri Oct 09 18:44:01.456 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 18:44:01.459 EAT 2020">
+  <info>
+    undeployed:/home/jp/Desktop/java-stuff/tracom-final-project/rafikibora/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 18:44:01.460 EAT 2020">
+  <trace>
+    undeploying:/home/jp/Desktop/java-stuff/tracom-final-project/rafikibora/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 18:44:01.596 EAT 2020">
+  <info>
+    undeployed:/home/jp/Desktop/java-stuff/tracom-final-project/rafikibora/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Fri Oct 09 18:44:01.598 EAT 2020">
+  <trace>
+    undeploying:/home/jp/Desktop/java-stuff/tracom-final-project/rafikibora/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+</logger>
