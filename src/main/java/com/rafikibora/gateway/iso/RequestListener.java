@@ -31,8 +31,9 @@ public class RequestListener implements ISORequestListener {
                         sender.send(SalerespnseISOMsg);
                         break;
                     // Withdrawal TTC (01)
-                    case "01":
-
+                    case "26":
+                        ISOMsg withdrawIsoMsg = transactionProcessor.processWithdraw(request);
+                        sender.send(withdrawIsoMsg);
                         break;
                     // Send money TTC (40)
                     case "34":
