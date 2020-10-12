@@ -22,4 +22,7 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/log/
+.nb-gradle/
+#q2 server log
+log/q2.log
 *log/
