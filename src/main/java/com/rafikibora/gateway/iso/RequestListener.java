@@ -15,7 +15,7 @@ public class RequestListener implements ISORequestListener {
         try {
             String mti = request.getMTI();
 
-            if("0200".equals(mti)){
+            if ("0200".equals(mti)) {
                 String processingCode = request.getString(3);
                 processingCode = processingCode.substring(0, 2);
 
