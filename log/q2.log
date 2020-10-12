@@ -19134,3 +19134,1362 @@ Nested:org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafik
       logger.Q2.buffered: org.jpos.util.BufferedLogListener
   </info>
 </log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:30.033 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:30.878 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:00:30.880 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:30.883 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:30.884 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:30.885 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:30.885 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+</logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Mon Oct 12 12:00:34.214 EAT 2020" lifespan="642ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:34.227 EAT 2020" lifespan="9ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:34.235 EAT 2020" lifespan="6ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.iso.QServer" at="Mon Oct 12 12:00:34.281 EAT 2020">
+  <warn>
+    error starting service
+    <iso-exception>
+      org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".))
+      <iso-exception>
+        Error reading cfg/altopackager.xml
+        <iso-exception>
+          Error reading cfg/altopackager.xml
+          <nested-exception>
+          org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jpos.iso.packager.GenericPackager.readFile(GenericPackager.java:200)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:157)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+          </nested-exception>
+          org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jpos.iso.packager.GenericPackager.readFile(GenericPackager.java:200)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:157)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+        </iso-exception>
+        org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".))
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jpos.iso.packager.GenericPackager.readFile(GenericPackager.java:200)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:157)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+      </iso-exception>
+      org.jpos.core.ConfigurationException: org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)) (org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)))
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:385)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".))
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jpos.iso.packager.GenericPackager.readFile(GenericPackager.java:200)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:157)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+    </iso-exception>
+  </warn>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:00:34.309 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:00:34.314 EAT 2020">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: 6c48fb6d-4ad9-4dcc-8198-c388527acd3d
+           uptime: 00:00:01.217
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/12/105
+          threads: 6
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-6c48fb6d-4ad9-4dcc-8198-c388527acd3d,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:53.508 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:54.321 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:00:54.324 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:54.326 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:54.327 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:54.328 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:54.329 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+</logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Mon Oct 12 12:00:56.078 EAT 2020" lifespan="491ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:56.101 EAT 2020" lifespan="13ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:00:56.109 EAT 2020" lifespan="7ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.iso.QServer" at="Mon Oct 12 12:00:56.171 EAT 2020">
+  <warn>
+    error starting service
+    <iso-exception>
+      org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".))
+      <iso-exception>
+        Error reading cfg/altopackager.xml
+        <iso-exception>
+          Error reading cfg/altopackager.xml
+          <nested-exception>
+          org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jpos.iso.packager.GenericPackager.readFile(GenericPackager.java:200)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:157)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+          </nested-exception>
+          org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jpos.iso.packager.GenericPackager.readFile(GenericPackager.java:200)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:157)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+        </iso-exception>
+        org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".))
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jpos.iso.packager.GenericPackager.readFile(GenericPackager.java:200)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:157)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+      </iso-exception>
+      org.jpos.core.ConfigurationException: org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)) (org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)))
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:385)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.jpos.core.ConfigurationException: Error reading cfg/altopackager.xml (org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".))
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.jpos.iso.ISOException: Error reading cfg/altopackager.xml (org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:160)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Nested:org.xml.sax.SAXParseException; systemId: file:///home/maulid/tracom/rafikibora-gateway/cfg/altopackager.xml; lineNumber: 10; columnNumber: 1; Element type "isofield" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jpos.iso.packager.GenericPackager.readFile(GenericPackager.java:200)
+	at org.jpos.iso.packager.GenericPackager.setConfiguration(GenericPackager.java:157)
+	at org.jpos.q2.QFactory.setConfiguration(QFactory.java:381)
+	at org.jpos.q2.iso.ChannelAdaptor.newChannel(ChannelAdaptor.java:198)
+	at org.jpos.q2.iso.QServer.newChannel(QServer.java:85)
+	at org.jpos.q2.iso.QServer.initServer(QServer.java:94)
+	at org.jpos.q2.iso.QServer.startService(QServer.java:155)
+	at org.jpos.q2.QBeanSupport.start(QBeanSupport.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:260)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:112)
+	at java.management/com.sun.jmx.mbeanserver.StandardMBeanIntrospector.invokeM2(StandardMBeanIntrospector.java:46)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.jpos.q2.QFactory.startQBean(QFactory.java:188)
+	at org.jpos.q2.Q2.start(Q2.java:525)
+	at org.jpos.q2.Q2.deploy(Q2.java:311)
+	at org.jpos.q2.Q2.run(Q2.java:186)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+    </iso-exception>
+  </warn>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:00:56.198 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:00:56.208 EAT 2020" lifespan="1ms">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: d3c7603d-774d-49d1-9bb2-3df240900362
+           uptime: 00:00:01.077
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/12/105
+          threads: 6
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-d3c7603d-774d-49d1-9bb2-3df240900362,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:03:38.298 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:03:38.753 EAT 2020" lifespan="1ms">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:03:38.755 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:03:38.758 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:03:38.760 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:03:38.765 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:03:38.768 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+</logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Mon Oct 12 12:03:42.080 EAT 2020" lifespan="502ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:03:42.105 EAT 2020" lifespan="21ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:03:42.116 EAT 2020" lifespan="9ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:03:42.762 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Mon Oct 12 12:03:42.764 EAT 2020" lifespan="1ms">
+  <iso-server>
+    listening on port 10203
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:03:42.767 EAT 2020" lifespan="2ms">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: 6c2aca87-5ca9-4e19-9e7b-9db966d4b44b
+           uptime: 00:00:01.915
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/32/85
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-6c2aca87-5ca9-4e19-9e7b-9db966d4b44b,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:54690" at="Mon Oct 12 12:04:11.393 EAT 2020" lifespan="1ms">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:54690" at="Mon Oct 12 12:04:14.065 EAT 2020" lifespan="2670ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="51XXXXXXXXXX3147"/>
+      <field id="3" value="000000"/>
+      <field id="4" value="000000000100"/>
+      <field id="7" value="1011151500"/>
+      <field id="11" value="000001"/>
+      <field id="12" value="151500"/>
+      <field id="13" value="1011"/>
+      <field id="22" value="010"/>
+      <field id="25" value="00"/>
+      <field id="41" value="00010001"/>
+      <field id="42" value="123456789123456"/>
+      <field id="48" value="008003123"/>
+      <field id="49" value="810"/>
+      <field id="102" value="0720304056"/>
+      <field id="103" value="0714385056"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:54690" at="Mon Oct 12 12:04:14.203 EAT 2020">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0210"/>
+      <field id="2" value="51XXXXXXXXXX3147"/>
+      <field id="3" value="000000"/>
+      <field id="4" value="000000000100"/>
+      <field id="7" value="1011151500"/>
+      <field id="11" value="000001"/>
+      <field id="12" value="151500"/>
+      <field id="13" value="1011"/>
+      <field id="22" value="010"/>
+      <field id="25" value="00"/>
+      <field id="41" value="00010001"/>
+      <field id="42" value="123456789123456"/>
+      <field id="48" value="008003123"/>
+      <field id="49" value="810"/>
+      <field id="102" value="0720304056"/>
+      <field id="103" value="0714385056"/>
+      <field id="104" value="  Successful"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:04:56.933 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:04:57.794 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:04:57.797 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:04:57.798 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:04:57.799 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="channel/127.0.0.1:54690" at="Mon Oct 12 12:04:57.802 EAT 2020" lifespan="43596ms">
+  <receive>
+    <peer-disconnect/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:54690" at="Mon Oct 12 12:04:57.805 EAT 2020">
+  <session-end/>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:04:57.806 EAT 2020" lifespan="1ms">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:04:57.807 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+</logger>
+<?xml version="1.0" encoding="UTF-8"?>
+<logger class="org.jpos.util.DailyLogListener">
+<log realm="Q2.system" at="Mon Oct 12 12:13:22.140 EAT 2020" lifespan="772ms">
+  <info>
+    Q2 started, deployDir=/home/maulid/tracom/rafikibora-gateway/deploy
+    
+    jPOS 2.0.0 master/be6e219 (2015-02-25 22:04:06 UYST) 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+jPOS Community Edition, licensed under GNU AGPL v3.0.
+This software is probably not suitable for commercial use.
+Please see http://jpos.org/license for details.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iQEcBAEBAgAGBQJMolHDAAoJEOQyeO71nYtFv74H/3OgehDGEy1VXp2U3/GcAobg
+HH2eZjPUz53r38ARPiU3pzm9LwDa3WZgJJaa/b9VrJwKvbPwe9+0kY3gScDE1skT
+ladHt+KHHmGQArEutkzHlpZa73RbroFEIa1qmN6MaDEHGoxZqDh0Sv2cpvOaVYGO
+St8ZaddLBPC17bSjAPWo9sWbvL7FgPFOHhnPmbeux8SLtnfWxXWsgo5hLBanKmO1
+1z+I/w/6DL6ZYZU6bAJUk+eyVVImJqw0x3IEElI07Nh9MC6BA4iJ77ejobj8HI2r
+q9ulRPEqH9NR79619lNKVUkE206dVlXo7xHmJS1QZy5v/GT66xBxyDVfTduPFXk=
+=oP+v
+-----END PGP SIGNATURE-----
+
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:13:22.174 EAT 2020" lifespan="26ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:13:22.183 EAT 2020" lifespan="7ms">
+  <info>
+    deploy: /home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:13:22.938 EAT 2020">
+  <info>
+    Starting SystemMonitor
+  </info>
+</log>
+<log realm="server_incoming.server" at="Mon Oct 12 12:13:22.942 EAT 2020">
+  <iso-server>
+    listening on port 10203
+  </iso-server>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:13:22.945 EAT 2020" lifespan="3ms">
+  <info>
+               OS: Linux
+             host: maulid-ThinkPad-X260/127.0.1.1
+          version: 2.0.0 (be6e219)
+         instance: 6423d7db-4684-48f8-ac84-6bdf1400bcde
+           uptime: 00:00:02.127
+       processors: 4
+           drift : 0
+    memory(t/u/f): 118/31/86
+          threads: 8
+            Thread[Reference Handler,10,system]
+            Thread[Finalizer,8,system]
+            Thread[Signal Dispatcher,9,system]
+            Thread[Notification Thread,9,system]
+            Thread[Attach Listener,9,system]
+            Thread[Monitor Ctrl-Break,5,main]
+            Thread[Q2-6423d7db-4684-48f8-ac84-6bdf1400bcde,5,main]
+            Thread[DestroyJavaVM,5,main]
+            Thread[pool-1-thread-1,5,main]
+            Thread[Timer-0,5,main]
+            Thread[Thread-2,5,main]
+            Thread[SystemMonitor,5,main]
+            Thread[PooledThread-0,5,ThreadPool-0-1]
+            Thread[Common-Cleaner,8,InnocuousThreadGroup]
+         encoding: UTF-8
+    name-registrar:
+      tspace:default: org.jpos.space.TSpace
+        <keycount>-1</keycount>
+        <gcinfo>0,0</gcinfo>
+
+      server.server_incoming: org.jpos.iso.ISOServer
+        connected=0, rx=0, tx=0, last=0
+      logger.Q2: org.jpos.util.Logger
+      logger.: org.jpos.util.Logger
+      logger.Q2.buffered: org.jpos.util.BufferedLogListener
+      server_incoming: org.jpos.q2.iso.QServer
+  </info>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:54750" at="Mon Oct 12 12:13:30.150 EAT 2020">
+  <session-start/>
+</log>
+<log realm="channel/127.0.0.1:54750" at="Mon Oct 12 12:13:38.720 EAT 2020" lifespan="8569ms">
+  <receive>
+    <isomsg direction="incoming">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0200"/>
+      <field id="2" value="51XXXXXXXXXX3147"/>
+      <field id="3" value="000000"/>
+      <field id="4" value="000000000100"/>
+      <field id="7" value="1011151500"/>
+      <field id="11" value="000001"/>
+      <field id="12" value="151500"/>
+      <field id="13" value="1011"/>
+      <field id="22" value="010"/>
+      <field id="25" value="00"/>
+      <field id="41" value="00010001"/>
+      <field id="42" value="123456789123456"/>
+      <field id="48" value="008003123"/>
+      <field id="49" value="810"/>
+      <field id="102" value="0720304056"/>
+      <field id="103" value="0714385056"/>
+    </isomsg>
+  </receive>
+</log>
+<log realm="channel/127.0.0.1:54750" at="Mon Oct 12 12:13:39.194 EAT 2020">
+  <send>
+    <isomsg direction="outgoing">
+      <!-- org.jpos.iso.packager.GenericPackager[cfg/altopackager.xml] -->
+      <field id="0" value="0210"/>
+      <field id="2" value="51XXXXXXXXXX3147"/>
+      <field id="3" value="000000"/>
+      <field id="4" value="000000000100"/>
+      <field id="7" value="1011151500"/>
+      <field id="11" value="000001"/>
+      <field id="12" value="151500"/>
+      <field id="13" value="1011"/>
+      <field id="22" value="010"/>
+      <field id="25" value="00"/>
+      <field id="41" value="00010001"/>
+      <field id="42" value="123456789123456"/>
+      <field id="48" value="008003123"/>
+      <field id="49" value="810"/>
+      <field id="102" value="0720304056"/>
+      <field id="103" value="0714385056"/>
+      <field id="104" value="  Successful"/>
+    </isomsg>
+  </send>
+</log>
+<log realm="channel/127.0.0.1:54750" at="Mon Oct 12 12:18:39.292 EAT 2020" lifespan="300096ms">
+  <receive>
+    <io-timeout/>
+  </receive>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:54750" at="Mon Oct 12 12:18:39.296 EAT 2020">
+  <session-end/>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:54766" at="Mon Oct 12 12:20:48.285 EAT 2020">
+  <session-start/>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:21:05.629 EAT 2020">
+  <info>
+    shutting down (hook)
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:21:08.056 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </trace>
+</log>
+<log realm="org.jpos.q2.qbean.SystemMonitor" at="Mon Oct 12 12:21:08.058 EAT 2020">
+  <info>
+    Stopping SystemMonitor
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:21:08.060 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/99_sysmon.xml
+  </info>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:21:08.062 EAT 2020">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </trace>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:21:08.063 EAT 2020">
+  <info>
+    undeployed:/home/maulid/tracom/rafikibora-gateway/deploy/10_server_incoming.xml
+  </info>
+</log>
+<log realm="channel/127.0.0.1:54766" at="Mon Oct 12 12:21:08.064 EAT 2020" lifespan="19778ms">
+  <receive/>
+</log>
+<log realm="Q2.system" at="Mon Oct 12 12:21:08.065 EAT 2020" lifespan="1ms">
+  <trace>
+    undeploying:/home/maulid/tracom/rafikibora-gateway/deploy/00_logger.xml
+  </trace>
+</log>
+<log realm="server_incoming.server.session/127.0.0.1:54766" at="Mon Oct 12 12:21:08.065 EAT 2020">
+  <session-end/>
+</log>
+</logger>

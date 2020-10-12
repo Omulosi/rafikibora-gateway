@@ -2,7 +2,7 @@
 
 <server class="org.jpos.q2.iso.QServer" logger="Q2" name="server_incoming">
 
-    <attr name="port" type="java.lang.Integer">10000</attr>
+    <attr name="port" type="java.lang.Integer">10203</attr>
     <channel class="org.jpos.iso.channel.ASCIIChannel"
             logger="Q2" packager="org.jpos.iso.packager.GenericPackager">
         <property name="packager-config" value="cfg/altopackager.xml" /> 
