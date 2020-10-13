@@ -88,7 +88,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             String CurrencyCode = (String) request.getValue(49);
             String personalIdentificationNoData = (String) request.getValue(52);
             String iccData = (String) request.getValue(55);
-            String messageAuthCode = (String) request.getValue(64);
+            //String messageAuthCode = (String) request.getValue(64);
             String accountOne = (String) request.getValue(102);
             String destAccount = (String) request.getValue(103);
 
@@ -116,7 +116,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             depositData.put("currencyCode", CurrencyCode);
             depositData.put("personalIdentificationNoData", personalIdentificationNoData);
             depositData.put("iccData", iccData);
-            depositData.put("messageAuthCode", messageAuthCode);
+           // depositData.put("messageAuthCode", messageAuthCode);
             depositData.put("accountOne", accountOne);
             depositData.put("destAccount", destAccount);
 
@@ -230,7 +230,6 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             String personalIdentificationNoData = (String) request.getValue(52);
             String additionalAmount = (String) request.getValue(54);
             String iccData = (String) request.getValue(55);
-            String messageAuthCode = (String) request.getValue(64);
             String customerAccount = (String) request.getValue(102);
             String merchantAccount = (String) request.getValue(103);
 
@@ -257,7 +256,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             saleData.put("personalIdentificationNoData", personalIdentificationNoData);
             saleData.put("additionalAmount", additionalAmount);
             saleData.put("iccData", iccData);
-            saleData.put("messageAuthCode", messageAuthCode);
+
 
             saleData.put("customerAccount", customerAccount);
             saleData.put("merchantAccount", merchantAccount);
