@@ -65,66 +65,63 @@ public class TransactionProcessorImpl implements TransactionProcessor {
          * 2100000000000001001011151500000001151500101101000000100011234567
          * 8912345600800312381007143850560714385056**/
         // communicate with backend
-        String DEPOSIT_MONEY_ENDPOINT = "http://localhost:2019/deposit/";
+        String DEPOSIT_MONEY_ENDPOINT = "http://localhost:2019/api/deposit/";
 
         ISOMsg response = null;
         try {
             //Extracting Iso fields
-            String secondBitmap = (String) request.getValue(1);
+           // String secondBitmap = (String) request.getValue(1);
             String processingCode = (String) request.getValue(3);
-            String amount = (String) request.getValue(4);
-            String transmissionDateTime = (String) request.getValue(7);
-            String stan = (String) request.getValue(11);
+            String amountTransaction = (String) request.getValue(4);
+            String dateTimeTransmission = (String) request.getValue(7);
+            String stan = (String) request.getValue(11);//YYMMDDhhmmss 08:53:36?
             String localTime = (String) request.getValue(12);
             String localDate = (String) request.getValue(13);
-            String localTimeDate = localTime + '-' + localDate;
+            String dateTimeLocalTransaction = localTime + ':' + localDate;
             String posEntryMode = (String) request.getValue(22);
             String functionCode = (String) request.getValue(24);
             String posConditionCode = (String) request.getValue(25);
-            String track2Data = (String) request.getValue(35);
-            String TerminalID = (String) request.getValue(41);
-            String cardAcceptorCode = (String) request.getValue(42);
-            String additionalData = (String) request.getValue(48);
-            String CurrencyCode = (String) request.getValue(49);
-            String personalIdentificationNoData = (String) request.getValue(52);
-            String iccData = (String) request.getValue(55);
-            //String messageAuthCode = (String) request.getValue(64);
-            String accountOne = (String) request.getValue(102);
-            String destAccount = (String) request.getValue(103);
+           // String track2Data = (String) request.getValue(35);
+            String terminal = (String) request.getValue(41);//Terminal ID
+            String merchant = (String) request.getValue(42);//Merchant ID
+          //  String additionalData = (String) request.getValue(48);
+            String amountTransactionCurrencyCode = (String) request.getValue(49);// Currency Code
+           // String personalIdentificationNoData = (String) request.getValue(52);
+            //String iccData = (String) request.getValue(55);
+            String sourceAccountNumber = (String) request.getValue(102);//Account one
+            String destinationAccountNumber = (String) request.getValue(103);//Account two
 
-            String password = (String) request.getValue(120);
-            String username = (String) request.getValue(121);
-            String authToken = (String) request.getValue(122);
+           // String password = (String) request.getValue(120);//Reserved private fields
+           // String username = (String) request.getValue(121);//Reserved private fields
+            String authToken = (String) request.getValue(122);//Reserved private fields
 
-            String secondaryMacData = (String) request.getValue(128);
 
             // Get iso data and send to backend
             Map<String, Object> depositData= new HashMap<>();
-            depositData.put("secondBitmap", secondBitmap);
+           // depositData.put("secondBitmap", secondBitmap);
             depositData.put("processingCode", processingCode);
-            depositData.put("amount", amount);
-            depositData.put("transmissionDateTime", transmissionDateTime);
+            depositData.put("amountTransaction", amountTransaction);
+            depositData.put("dateTimeTransmission", dateTimeTransmission);
             depositData.put("stan", stan);
-            depositData.put("localTimeDate", localTimeDate);
+            depositData.put("dateTimeLocalTransaction", dateTimeLocalTransaction);
             depositData.put("posEntryMode", posEntryMode);
             depositData.put("functionCode", functionCode);
             depositData.put("posConditionCode", posConditionCode);
-            depositData.put("track2Data", track2Data);
-            depositData.put("terminalID", TerminalID);
-            depositData.put("cardAcceptorCode", cardAcceptorCode);
-            depositData.put("additionalData", additionalData);
-            depositData.put("currencyCode", CurrencyCode);
-            depositData.put("personalIdentificationNoData", personalIdentificationNoData);
-            depositData.put("iccData", iccData);
-           // depositData.put("messageAuthCode", messageAuthCode);
-            depositData.put("accountOne", accountOne);
-            depositData.put("destAccount", destAccount);
+           // depositData.put("track2Data", track2Data);
+            depositData.put("terminal", terminal);
+            depositData.put("merchant", merchant);
+           // depositData.put("additionalData", additionalData);
+            depositData.put("amountTransactionCurrencyCode", amountTransactionCurrencyCode);
+           // depositData.put("personalIdentificationNoData", personalIdentificationNoData);
+           // depositData.put("iccData", iccData);
+            depositData.put("sourceAccountNumber", sourceAccountNumber);
+            depositData.put("destinationAccountNumber", destinationAccountNumber);
 
-            depositData.put("password", password);
-            depositData.put("username", username);
+           // depositData.put("password", password);
+            //depositData.put("username", username);
             depositData.put("authToken", authToken);
 
-            depositData.put("secondaryMacData", secondaryMacData);
+
 
 
             // send the request to backend
@@ -132,7 +129,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
 
             // communicate with backend
-            Map<String, Object> data = httpClient.get("http://localhost:2019/deposit/");
+            Map<String, Object> data = httpClient.get("http://localhost:2019/api/deposit/");
 
 
             // build response iso
@@ -206,7 +203,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
          * 2100000000000001001011151500000001151500101101000000100011234567
          * 8912345600800312381007143850560714385056**/
         // communicate with backend
-        String SALE_MONEY_ENDPOINT = "http://localhost:2019/sale/";
+        String SALE_MONEY_ENDPOINT = "http://localhost:2019/api/deposit/";
 
         ISOMsg response = null;
         try {
@@ -222,19 +219,19 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             String posEntryMode = (String) request.getValue(22);
             String functionCode = (String) request.getValue(24);
             String posConditionCode = (String) request.getValue(25);
-            String track2Data = (String) request.getValue(35);
-            String TerminalID = (String) request.getValue(41);
-            String cardAcceptorCode = (String) request.getValue(42);
-            String additionalData = (String) request.getValue(48);
-            String CurrencyCode = (String) request.getValue(49);
-            String personalIdentificationNoData = (String) request.getValue(52);
-            String additionalAmount = (String) request.getValue(54);
-            String iccData = (String) request.getValue(55);
-            String customerAccount = (String) request.getValue(102);
-            String merchantAccount = (String) request.getValue(103);
+           // String track2Data = (String) request.getValue(35);
+            String terminal = (String) request.getValue(41);
+            String merchant = (String) request.getValue(42);
+          //  String additionalData = (String) request.getValue(48);
+            String currencyCode = (String) request.getValue(49);
+           // String personalIdentificationNoData = (String) request.getValue(52);
+            //String additionalAmount = (String) request.getValue(54);
+           // String iccData = (String) request.getValue(55);
+            String sourceAccount = (String) request.getValue(102);
+            String destAccount = (String) request.getValue(103);
 
-            String password = (String) request.getValue(120);
-            String username = (String) request.getValue(121);
+           // String password = (String) request.getValue(120);
+            //String username = (String) request.getValue(121);
             String authToken = (String) request.getValue(122);
 
             // Get iso data and send to backend
@@ -248,21 +245,21 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             saleData.put("posEntryMode", posEntryMode);
             saleData.put("functionCode", functionCode);
             saleData.put("posConditionCode", posConditionCode);
-            saleData.put("track2Data", track2Data);
-            saleData.put("terminalID", TerminalID);
-            saleData.put("cardAcceptorCode", cardAcceptorCode);
-            saleData.put("additionalData", additionalData);
-            saleData.put("currencyCode", CurrencyCode);
-            saleData.put("personalIdentificationNoData", personalIdentificationNoData);
-            saleData.put("additionalAmount", additionalAmount);
-            saleData.put("iccData", iccData);
+          //  saleData.put("track2Data", track2Data);
+            saleData.put("terminal", terminal);
+            saleData.put("merchant", merchant);
+           // saleData.put("additionalData", additionalData);
+            saleData.put("currencyCode", currencyCode);
+            //saleData.put("personalIdentificationNoData", personalIdentificationNoData);
+          //  saleData.put("additionalAmount", additionalAmount);
+           // saleData.put("iccData", iccData);
 
 
-            saleData.put("customerAccount", customerAccount);
-            saleData.put("merchantAccount", merchantAccount);
+            saleData.put("sourceAccount", sourceAccount);
+            saleData.put("destAccount", destAccount);
 
-            saleData.put("password", password);
-            saleData.put("username", username);
+           // saleData.put("password", password);
+            //saleData.put("username", username);
             saleData.put("authToken", authToken);
 
 
@@ -273,7 +270,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
 
             // communicate with backend
-            Map<String, Object> data = httpClient.get("http://localhost:2019/sale/");
+           Map<String, Object> data = httpClient.get("http://localhost:2019/api/deposit/");
 
 
             // build response iso
