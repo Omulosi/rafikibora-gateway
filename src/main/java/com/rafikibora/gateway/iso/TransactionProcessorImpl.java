@@ -71,46 +71,50 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         ISOMsg isoMsgResponse = (ISOMsg) isoMsg.clone();
 
         HashMap<String, String> isoMsgToSend = new HashMap<String, String>();
-//        isoMsgToSend.put("pan", isoMsg.getString(2));
-//        isoMsgToSend.put("pcode", isoMsg.getString(3));
-//        isoMsgToSend.put("txnAmount", isoMsg.getString(4));
-//        isoMsgToSend.put("transmissionDateTime", isoMsg.getString(7));
-//        isoMsgToSend.put("stan", isoMsg.getString(11));
-//        isoMsgToSend.put("txnLocalTime", isoMsg.getString(12));
-//        isoMsgToSend.put("txnLocalDate", isoMsg.getString(13));
-//        isoMsgToSend.put("posEntryMode", isoMsg.getString(22));
-////        isoMsgToSend.put("functionCode", isoMsg.getString(24));
-//        isoMsgToSend.put("posConditionCode", isoMsg.getString(25));
-//        isoMsgToSend.put("tid", isoMsg.getString(41));
-//        isoMsgToSend.put("mid", isoMsg.getString(42));
-//        isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(48));
-//        isoMsgToSend.put("txnCurrencyCode", isoMsg.getString(49));
-//        isoMsgToSend.put("srcAccount", isoMsg.getString(102));
-//        isoMsgToSend.put("destAccount", isoMsg.getString(103));
-        isoMsgToSend.put("password", this.processStringWithDelimiter(isoMsg.getString(120), '?'));
-        isoMsgToSend.put("email", this.processStringWithDelimiter(isoMsg.getString(121), '?'));
-//        isoMsgToSend.put("agentAuthToken", this.processStringWithDelimiter(isoMsg.getString(122), '?'));
+        isoMsgToSend.put("pan", isoMsg.getString(2));
+        isoMsgToSend.put("pcode", isoMsg.getString(3));
+        isoMsgToSend.put("txnAmount", isoMsg.getString(4));
+        isoMsgToSend.put("transmissionDateTime", isoMsg.getString(7));
+        isoMsgToSend.put("stan", isoMsg.getString(11));
+        isoMsgToSend.put("txnLocalTime", isoMsg.getString(12));
+        isoMsgToSend.put("txnLocalDate", isoMsg.getString(13));
+        isoMsgToSend.put("posEntryMode", isoMsg.getString(22));
+//        isoMsgToSend.put("functionCode", isoMsg.getString(24));
+        isoMsgToSend.put("posConditionCode", isoMsg.getString(25));
+        isoMsgToSend.put("tid", isoMsg.getString(41));
+        isoMsgToSend.put("mid", isoMsg.getString(42));
+        isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(48));
+        isoMsgToSend.put("txnCurrencyCode", isoMsg.getString(49));
+        isoMsgToSend.put("srcAccount", isoMsg.getString(102));
+        isoMsgToSend.put("destAccount", isoMsg.getString(103));
+//        isoMsgToSend.put("password", this.processStringWithDelimiter(isoMsg.getString(120), '#'));
+//        isoMsgToSend.put("email", this.processStringWithDelimiter(isoMsg.getString(121), '#'));
+        isoMsgToSend.put("agentAuthToken", this.processStringWithDelimiter(isoMsg.getString(122), '#'));
 
-//        Map<String, String> response = httpClient.post("http://localhost:2019/api/test_withdrawal",isoMsgToSend);
+        Map<String, String> response = httpClient.post("http://localhost:8080/api/auth/receive_money",isoMsgToSend);
 //        Map<String, String> response = httpClient.post("http://192.168.254.189:8080/api/auth/login",isoMsgToSend);
-        Map<String, String> response = httpClient.get("http://192.168.254.189:8080/profile");
+//        Map<String, String> response = httpClient.get("http://192.168.254.189:8080/profile");
 
-        System.out.println("************************************");
+        System.out.println("*************** Response from server *********************");
         System.out.println(response.get("message"));
 //        System.out.println(response.get("email"));
 //        System.out.println(response.get("authToken"));
-        System.out.println("************************************");
+        System.out.println("*************** Response from server *********************");
 
         try {
             isoMsgResponse.setMTI("0210");
 
-//            if(response.get("msg").equals("successful"))
-//                isoMsgResponse.set(39, "00");
-//
-//            if(response.get("msg").equals("insufficient funds"))
-//                isoMsgResponse.set(39, "16");
+            if(response.get("message").equals("successful"))
+                isoMsgResponse.set(39, "00");
+
+            if(response.get("message").equals("insufficient funds"))
+                isoMsgResponse.set(39, "16");
+
+            if(response.get("message").equals("GATEWAY ERROR"))
+                isoMsgResponse.set(39, "06");
 
         } catch (ISOException e) {
+            System.out.println("ERROR MESSAGE: "+e.getMessage());
             e.printStackTrace();
         } finally {
             return isoMsgResponse;

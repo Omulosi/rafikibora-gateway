@@ -243,9 +243,9 @@
       class="org.jpos.iso.IFA_LLLCHAR"/>
   <isofield
       id="47"
-      length="999"
+      length="30"
       name="ADITIONAL DATA - NATIONAL"
-      class="org.jpos.iso.IFA_LLLCHAR"/>
+      class="org.jpos.iso.IF_CHAR"/>
   <isofield
       id="48"
       length="9"
