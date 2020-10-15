@@ -19,12 +19,12 @@ public class PackagerTests {
         msg.set(29, "C00000000");
         msg.set(31, "C00000000");
         msg.set(103, "001");
-        
+
         msg.setPackager(new GenericPackager("cfg/altopackager.xml"));
         String msgString = new String(msg.pack());
-        System.out.println("Account Inquiry : "+msgString);
+        System.out.println("Account Inquiry : " + msgString);
     }
-    
+
     @Test
     public void testTopupRequest() throws Exception {
         ISOMsg msg = new ISOMsg("0200");
@@ -41,12 +41,12 @@ public class PackagerTests {
         msg.set(31, "C00000000");
         msg.set(102, "9876543210");  // akun sumber dana biasanya di 102
         msg.set(103, "001");     // akun penerima dana biasanya di 103
-        
+
         msg.setPackager(new GenericPackager("cfg/altopackager.xml"));
         String msgString = new String(msg.pack());
-        System.out.println("Topup Request : "+msgString);
+        System.out.println("Topup Request : " + msgString);
     }
-    
+
     @Test
     public void testTransfer() throws Exception {
         ISOMsg msg = new ISOMsg("0200");
@@ -63,9 +63,9 @@ public class PackagerTests {
         msg.set(31, "C00000000");
         msg.set(102, "001");  // akun sumber dana biasanya di 102
         msg.set(103, "123");     // akun penerima dana biasanya di 103
-        
+
         msg.setPackager(new GenericPackager("cfg/altopackager.xml"));
         String msgString = new String(msg.pack());
-        System.out.println("Transfer Request : "+msgString);
+        System.out.println("Transfer Request : " + msgString);
     }
 }
