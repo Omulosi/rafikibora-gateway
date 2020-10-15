@@ -4,10 +4,8 @@
 
     <attr name="port" type="java.lang.Integer">10203</attr>
 
-    <channel class="org.jpos.iso.channel.NACChannel"
-             packager="org.jpos.iso.packager.GenericPackager"
-             logger="Q2"
-             header="60000000">
+    <channel class="org.jpos.iso.channel.NACChannel" packager="org.jpos.iso.packager.GenericPackager" header="60000000">
+        <property name="packager-logger" value="Q2"/>
         <property name="packager-config" value="cfg/iso87binary.xml"/>
         <property name="timeout" value="180000"/>
     </channel>
@@ -18,4 +16,6 @@
                       realm="incoming-request-listener">
     </request-listener>
 </server>
+
+
 

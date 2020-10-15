@@ -1,17 +1,29 @@
 package com.rafikibora.gateway.iso;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.IOException;
 
+import org.jpos.iso.ISOException;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.ISORequestListener;
 import org.jpos.iso.ISOSource;
+import org.slf4j.LoggerFactory;
 
 public class RequestListener implements ISORequestListener {
 
     private final TransactionProcessorImpl transactionProcessor = new TransactionProcessorImpl();
 
+    /**
+     * Process incoming iso message
+     *
+     * @param sender iso message source
+     * @param request iso message to process
+     * @return boolean after processing
+     */
     public boolean process(ISOSource sender, ISOMsg request) {
+        System.out.println("**********REQUEST RECEIVED**********");
+        request.dump(System.out, " ");
+        System.out.println("**********REQUEST RECEIVED**********");
+
         try {
             String mti = request.getMTI();
 
@@ -43,14 +55,13 @@ public class RequestListener implements ISORequestListener {
                     default:
                         return false;
                 }
-
                 return false;
             }
             return false;
-        } catch (Exception ex) {
-            Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ISOException | IOException | NullPointerException ex) {
+            LoggerFactory.getLogger(RequestListener.class).error("Unable to process iso message: "+ ex.getMessage());
+            ex.printStackTrace();
         }
         return false;
     }
-
 }

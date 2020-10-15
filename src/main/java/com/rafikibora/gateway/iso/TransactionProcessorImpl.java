@@ -159,7 +159,6 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         isoMsgToSend.put("txnLocalTime", isoMsg.getString(12));
         isoMsgToSend.put("txnLocalDate", isoMsg.getString(13));
         isoMsgToSend.put("posEntryMode", isoMsg.getString(22));
-//        isoMsgToSend.put("functionCode", isoMsg.getString(24));
         isoMsgToSend.put("posConditionCode", isoMsg.getString(25));
         isoMsgToSend.put("tid", isoMsg.getString(41));
         isoMsgToSend.put("mid", isoMsg.getString(42));
