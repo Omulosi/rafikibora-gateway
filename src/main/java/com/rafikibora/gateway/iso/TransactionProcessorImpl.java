@@ -2,6 +2,7 @@ package com.rafikibora.gateway.iso;
 
 import org.jpos.iso.ISOException;
 import org.jpos.iso.ISOMsg;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,14 +26,14 @@ public class TransactionProcessorImpl implements TransactionProcessor {
     public ISOMsg processSendMoney(ISOMsg request) {
 
         String SEND_MONEY_ENDPOINT = "http://41.215.130.247:10203/api/transactions/send_money";
-        ISOMsg response = null;
+        ISOMsg response = (ISOMsg) request.clone();
 
         try {
             String pan = request.getString(2);
             String amount = request.getString(4);
             String transmissionDateTime = request.getString(7); //YYMMDDhhmmss
             String terminalID = request.getString(41); // Terminal ID
-//          String merchantID = request.getString(42); // Merchant ID
+            //String merchantID = request.getString(42); // Merchant ID
             String email = request.getString(47); // Currency Code
             String currencyCode = request.getString(49); // Currency Code
 
@@ -44,23 +45,21 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             transactionData.put("recipientEmail", email);
             transactionData.put("TID", terminalID);
             transactionData.put("dateTimeTransmission", transmissionDateTime);
-//          transactionData.put("MID", merchantID);
+            //transactionData.put("MID", merchantID);
             transactionData.put("currencyCode", currencyCode);
 
             // Get response
-            Map<String, Object> postResponse = httpClient.post(SEND_MONEY_ENDPOINT, transactionData);
+            RestTemplate httpClient = new RestTemplate();
+            String postResponse = httpClient.postForObject(SEND_MONEY_ENDPOINT, transactionData, String.class);
             System.out.println("====================================" + postResponse);
-            response = (ISOMsg) request.clone();
-            if (postResponse.get("OK")) {
+            if ("OK".equalsIgnoreCase(postResponse.trim())) {
                 response.setMTI("0210");
+                // Approve transaction
+                response.set(39, "00");
+            } else {
+                // Transaction declined: send an error
+                response.set(39, "06");
             }
-
-
-
-
-            response.set(39, postResponse.get("code").toString()); // response code
-            response.set(104, postResponse.get("message").toString()); // Transaction description
-            response.set(7, postResponse.get("timestamp").toString()); // Transmission date and time
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
