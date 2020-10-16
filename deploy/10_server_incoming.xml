@@ -2,7 +2,7 @@
 
 <server class="org.jpos.q2.iso.QServer" logger="Q2" name="server_incoming" realm="xml-server-10203">
 
-    <attr name="port" type="java.lang.Integer">10203</attr>
+    <attr name="port" type="java.lang.Integer">10201</attr>
 
     <channel class="org.jpos.iso.channel.NACChannel" packager="org.jpos.iso.packager.GenericPackager" header="60000000">
         <property name="packager-logger" value="Q2"/>

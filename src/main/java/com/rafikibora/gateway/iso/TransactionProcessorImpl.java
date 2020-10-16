@@ -65,7 +65,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
          * 2100000000000001001011151500000001151500101101000000100011234567
          * 8912345600800312381007143850560714385056**/
 //         communicate with backend
-        String DEPOSIT_MONEY_ENDPOINT = "http://41.215.130.247:2019/api/auth/deposit/";
+        String DEPOSIT_MONEY_ENDPOINT = "http://41.215.130.247:10203/api/deposit/";
 
         ISOMsg response = null;
         try {
@@ -98,13 +98,13 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
 
             // communicate with backend
-            Map<String, Object> data = httpClient.get("http://41.215.130.247:2019/api/auth/deposit/");
+//            Map<String, Object> data = httpClient.get("http://41.215.130.247:2019/api/deposit/");
 
 
             // build response iso
             response = (ISOMsg) request.clone();
             response.setMTI("0210");
-            response.set(104, " " + "Successful");
+            response.set(39, "00");
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
@@ -135,7 +135,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(47));
         isoMsgToSend.put("txnCurrencyCode", isoMsg.getString(49));
 
-        Map<String, String> response = httpClient.post("http://192.168.254.190:2019/api/auth/receive_money",isoMsgToSend);
+        Map<String, String> response = httpClient.post("http://192.168.254.190:10203/api/auth/receive_money",isoMsgToSend);
 
         System.out.println("*************** Response from web portal *********************");
         System.out.println("response code: "+response.get("message"));
@@ -159,7 +159,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
          * 2100000000000001001011151500000001151500101101000000100011234567
          * 8912345600800312381007143850560714385056**/
         // communicate with backend
-        String SALE_MONEY_ENDPOINT = "http://41.215.130.247:2019/api/auth/sale/";
+        String SALE_MONEY_ENDPOINT = "http://41.215.130.247:10203/api/sale/";
 
         ISOMsg response = null;
         try {
@@ -188,13 +188,13 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
 
             // communicate with backend
-           Map<String, Object> data = httpClient.get("http://41.215.130.247:2019/api/auth/sale/");
+           //Map<String, Object> data = httpClient.get("http://41.215.130.247:2019/api/sale/");
 
 
             // build response iso
             response = (ISOMsg) request.clone();
             response.setMTI("0210");
-            response.set(104, " " + " Successful");
+            response.set(39, "00");
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
