@@ -65,7 +65,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
          * 2100000000000001001011151500000001151500101101000000100011234567
          * 8912345600800312381007143850560714385056**/
 //         communicate with backend
-        String DEPOSIT_MONEY_ENDPOINT = "http://localhost:2019/api/deposit/";
+        String DEPOSIT_MONEY_ENDPOINT = "http://41.215.130.247:2019/api/auth/deposit/";
 
         ISOMsg response = null;
         try {
@@ -98,7 +98,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
 
             // communicate with backend
-            Map<String, Object> data = httpClient.get("http://localhost:2019/api/deposit/");
+            Map<String, Object> data = httpClient.get("http://41.215.130.247:2019/api/auth/deposit/");
 
 
             // build response iso
@@ -159,7 +159,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
          * 2100000000000001001011151500000001151500101101000000100011234567
          * 8912345600800312381007143850560714385056**/
         // communicate with backend
-        String SALE_MONEY_ENDPOINT = "http://localhost:2019/api/sale/";
+        String SALE_MONEY_ENDPOINT = "http://41.215.130.247:2019/api/auth/sale/";
 
         ISOMsg response = null;
         try {
@@ -188,7 +188,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
 
             // communicate with backend
-           Map<String, Object> data = httpClient.get("http://localhost:2019/api/sale/");
+           Map<String, Object> data = httpClient.get("http://41.215.130.247:2019/api/auth/sale/");
 
 
             // build response iso
