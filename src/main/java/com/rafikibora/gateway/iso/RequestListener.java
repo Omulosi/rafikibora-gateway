@@ -6,7 +6,6 @@ import org.jpos.iso.ISOException;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.ISORequestListener;
 import org.jpos.iso.ISOSource;
-import org.slf4j.LoggerFactory;
 
 public class RequestListener implements ISORequestListener {
 
@@ -36,31 +35,29 @@ public class RequestListener implements ISORequestListener {
                     case "21":
                         ISOMsg respnseISOMsg = transactionProcessor.processDeposit(request);
                         sender.send(respnseISOMsg);
-                        break;
+                        return true;
                     // Purchase TTC
                     case "00":
                         ISOMsg SalerespnseISOMsg = transactionProcessor.processSale(request);
                         sender.send(SalerespnseISOMsg);
-                        break;
+                        return true;
                     // Withdrawal TTC (01)
                     case "26":
-                        ISOMsg withdrawIsoMsg = transactionProcessor.processWithdraw(request);
+                        ISOMsg withdrawIsoMsg = transactionProcessor.processReceiveMoney(request);
                         sender.send(withdrawIsoMsg);
-                        break;
+                        return true;
                     // Send money TTC (40)
                     case "34":
                         ISOMsg responseISOMsg = transactionProcessor.processSendMoney(request);
                         sender.send(responseISOMsg);
-                       return true;
+                        return true;
                     default:
                         return false;
                 }
-                return false;
             }
             return false;
         } catch (ISOException | IOException | NullPointerException ex) {
-            LoggerFactory.getLogger(RequestListener.class).error("Unable to process iso message: "+ ex.getMessage());
-            ex.printStackTrace();
+            System.out.println("ERROR MESSAGE.... "+ex.getMessage());
         }
         return false;
     }

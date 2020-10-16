@@ -1,7 +1,6 @@
 package com.rafikibora.gateway.iso;
 
 import org.jpos.iso.ISOException;
-import org.jpos.iso.ISOField;
 import org.jpos.iso.ISOMsg;
 
 import java.util.HashMap;
@@ -14,6 +13,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
     @Override
     public ISOMsg processSendMoney(ISOMsg request) {
+
         String SEND_MONEY_ENDPOINT = "http://localhost:2019/api/send_money";
         ISOMsg response = null;
 
@@ -64,7 +64,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         /**01560200F238048000C18000000000000600000051XXXXXXXXXX3147
          * 2100000000000001001011151500000001151500101101000000100011234567
          * 8912345600800312381007143850560714385056**/
-        // communicate with backend
+//         communicate with backend
         String DEPOSIT_MONEY_ENDPOINT = "http://localhost:2019/api/deposit/";
 
         ISOMsg response = null;
@@ -143,65 +143,49 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
         return response;
 
+
+
     }
 
+    /**
+     * Process receive money transaction
+     * @param isoMsg FROM pos
+     * @return isoMsg
+     */
     @Override
-    public ISOMsg processWithdraw(ISOMsg isoMsg) {
-
+    public ISOMsg processReceiveMoney(ISOMsg isoMsg) {
         ISOMsg isoMsgResponse = (ISOMsg) isoMsg.clone();
 
-        HashMap<String, String> isoMsgToSend = new HashMap<String, String>();
+        HashMap<String, String> isoMsgToSend = new HashMap<>();
+
         isoMsgToSend.put("pan", isoMsg.getString(2));
-        isoMsgToSend.put("pcode", isoMsg.getString(3));
-        isoMsgToSend.put("txnAmount", isoMsg.getString(4));
+        isoMsgToSend.put("processingCode", isoMsg.getString(3));
         isoMsgToSend.put("transmissionDateTime", isoMsg.getString(7));
-        isoMsgToSend.put("stan", isoMsg.getString(11));
-        isoMsgToSend.put("txnLocalTime", isoMsg.getString(12));
-        isoMsgToSend.put("txnLocalDate", isoMsg.getString(13));
-        isoMsgToSend.put("posEntryMode", isoMsg.getString(22));
-        isoMsgToSend.put("posConditionCode", isoMsg.getString(25));
         isoMsgToSend.put("tid", isoMsg.getString(41));
         isoMsgToSend.put("mid", isoMsg.getString(42));
-        isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(48));
+        isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(47));
         isoMsgToSend.put("txnCurrencyCode", isoMsg.getString(49));
-        isoMsgToSend.put("srcAccount", isoMsg.getString(102));
-        isoMsgToSend.put("destAccount", isoMsg.getString(103));
-//        isoMsgToSend.put("password", this.processStringWithDelimiter(isoMsg.getString(120), '#'));
-//        isoMsgToSend.put("email", this.processStringWithDelimiter(isoMsg.getString(121), '#'));
-        isoMsgToSend.put("agentAuthToken", this.processStringWithDelimiter(isoMsg.getString(122), '#'));
 
-        Map<String, String> response = httpClient.post("http://localhost:8080/api/auth/receive_money",isoMsgToSend);
-//        Map<String, String> response = httpClient.post("http://192.168.254.189:8080/api/auth/login",isoMsgToSend);
-//        Map<String, String> response = httpClient.get("http://192.168.254.189:8080/profile");
+        Map<String, String> response = httpClient.post("http://192.168.254.190:2019/api/auth/receive_money",isoMsgToSend);
 
-        System.out.println("*************** Response from server *********************");
-        System.out.println(response.get("message"));
-//        System.out.println(response.get("email"));
-//        System.out.println(response.get("authToken"));
-        System.out.println("*************** Response from server *********************");
+        System.out.println("*************** Response from web portal *********************");
+        System.out.println("response code: "+response.get("message"));
+        System.out.println("txn amount: "+response.get("txnAmount"));
+        System.out.println("*************** Response from web portal *********************");
 
         try {
             isoMsgResponse.setMTI("0210");
-
-            if(response.get("message").equals("successful"))
-                isoMsgResponse.set(39, "00");
-
-            if(response.get("message").equals("insufficient funds"))
-                isoMsgResponse.set(39, "16");
-
-            if(response.get("message").equals("GATEWAY ERROR"))
-                isoMsgResponse.set(39, "06");
-
+            isoMsgResponse.set(39, response.get("message"));
         } catch (ISOException e) {
             System.out.println("ERROR MESSAGE: "+e.getMessage());
             e.printStackTrace();
-        } finally {
-            return isoMsgResponse;
         }
+        return isoMsgResponse;
     }
 
     @Override
     public ISOMsg processSale(ISOMsg request) {
+
         /**01560200F238048000C18000000000000600000051XXXXXXXXXX3147
          * 2100000000000001001011151500000001151500101101000000100011234567
          * 8912345600800312381007143850560714385056**/
@@ -249,10 +233,10 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             saleData.put("functionCode", functionCode);
             saleData.put("posConditionCode", posConditionCode);
           //  saleData.put("track2Data", track2Data);
-            saleData.put("terminal", terminal);
-            saleData.put("merchant", merchant);
+//            saleData.put("terminal", terminal);
+//            saleData.put("merchant", merchant);
            // saleData.put("additionalData", additionalData);
-            saleData.put("currencyCode", currencyCode);
+//            saleData.put("currencyCode", currencyCode);
             //saleData.put("personalIdentificationNoData", personalIdentificationNoData);
           //  saleData.put("additionalAmount", additionalAmount);
            // saleData.put("iccData", iccData);
@@ -286,23 +270,6 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         }
 
         return response;
-    }
-
-
-    /**
-     * Read string up to first occurrence of a delimiter
-     * @param source
-     * @param delimiter
-     * @return
-     */
-    private String processStringWithDelimiter(String source, char delimiter){
-        char[] src = source.toCharArray();
-        String dest = "";
-        for(char ch : src){
-            if(ch == delimiter) break;
-            dest = dest + ch;
-        }
-        return dest;
     }
 
 }
