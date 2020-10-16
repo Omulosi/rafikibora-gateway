@@ -3,11 +3,11 @@ package com.rafikibora.gateway.iso;
 import org.jpos.iso.ISOMsg;
 
 public interface TransactionProcessor {
-    public ISOMsg processSendMoney(ISOMsg request);
+    ISOMsg processSendMoney(ISOMsg request);
 
-    public ISOMsg processDeposit(ISOMsg request);
+    ISOMsg processDeposit(ISOMsg request);
 
-    public ISOMsg processWithdraw(ISOMsg request);
+    ISOMsg processReceiveMoney(ISOMsg request);
 
-    public ISOMsg processSale(ISOMsg request);
+    ISOMsg processSale(ISOMsg request);
 }
