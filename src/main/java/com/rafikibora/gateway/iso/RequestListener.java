@@ -1,27 +1,32 @@
 package com.rafikibora.gateway.iso;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.jpos.iso.ISOException;
 import org.jpos.iso.ISOMsg;
 import org.jpos.iso.ISORequestListener;
 import org.jpos.iso.ISOSource;
 
+/**
+ * This class is a Request Listener that actually processes the incoming
+ * ISO Messages
+ */
 public class RequestListener implements ISORequestListener {
 
     private final TransactionProcessorImpl transactionProcessor = new TransactionProcessorImpl();
 
     /**
-     * Process incoming iso message
+     * Processes incoming iso message
      *
      * @param sender iso message source
      * @param request iso message to process
      * @return boolean after processing
      */
     public boolean process(ISOSource sender, ISOMsg request) {
-        System.out.println("**********REQUEST RECEIVED**********");
-        request.dump(System.out, " ");
-        System.out.println("**********REQUEST RECEIVED**********");
+
+        boolean returnVal = false;
 
         try {
             String mti = request.getMTI();
@@ -36,29 +41,29 @@ public class RequestListener implements ISORequestListener {
                         ISOMsg respnseISOMsg = transactionProcessor.processDeposit(request);
                         sender.send(respnseISOMsg);
                         return true;
-                    // Purchase TTC
+                    // Purchase/Sale TTC
                     case "00":
                         ISOMsg SalerespnseISOMsg = transactionProcessor.processSale(request);
                         sender.send(SalerespnseISOMsg);
                         return true;
                     // Withdrawal TTC (01)
-                    case "26":
+                    case "01":
                         ISOMsg withdrawIsoMsg = transactionProcessor.processReceiveMoney(request);
                         sender.send(withdrawIsoMsg);
                         return true;
                     // Send money TTC (40)
-                    case "34":
+                    case "26":
                         ISOMsg responseISOMsg = transactionProcessor.processSendMoney(request);
                         sender.send(responseISOMsg);
                         return true;
                     default:
-                        return false;
+                        returnVal = false;
                 }
             }
-            return false;
         } catch (ISOException | IOException | NullPointerException ex) {
             System.out.println("ERROR MESSAGE.... "+ex.getMessage());
+            Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return false;
+        return returnVal;
     }
 }

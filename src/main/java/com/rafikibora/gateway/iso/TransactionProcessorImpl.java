@@ -8,50 +8,56 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * This class includes methods for processing financial transactions.
+ * A financial transaction can be one of Send Money, Sale, Deposit Money or Withdraw money.
+ */
 public class TransactionProcessorImpl implements TransactionProcessor {
     private final HttpClient httpClient = new HttpClient();
 
+    /**
+     * Processes the send money transaction.
+     *
+     * @param request An ISOMsg with transaction data.
+     * @return IsoMsg An ISoMsg with appropriate response fields set.
+     */
     @Override
     public ISOMsg processSendMoney(ISOMsg request) {
 
-        String SEND_MONEY_ENDPOINT = "http://localhost:2019/api/send_money";
+        String SEND_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/transactions/send_money";
         ISOMsg response = null;
 
         try {
-
-            String amount = request.getString(4);
             String pan = request.getString(2);
-            String transmissionDateTime = request.getString(7); //MMDDhhmmss 19 july,09:52:41
-//            String transmissionDateTimeLocal = request.getString(12); //YYMMDDhhmmss
-            String transmissionTimeLocal = request.getString(12); //YYMMDDhhmmss 08:53:36?
-            String transmissionDateLocal = request.getString(13); //YYMMDDhhmmss 19 july
+            String amount = request.getString(4);
+            String transmissionDateTime = request.getString(7); //YYMMDDhhmmss
             String terminalID = request.getString(41); // Terminal ID
-            String merchantID = request.getString(42); // Merchant ID
+//          String merchantID = request.getString(42); // Merchant ID
+            String email = request.getString(47); // Currency Code
             String currencyCode = request.getString(49); // Currency Code
-            String senderAccount = request.getString(102); // Account Identification 1
-            String receiverAccount = request.getString(103); // Account Identification 2
 
 
             // Assemble data to send to backend
             Map<String, Object> transactionData = new HashMap<>();
-            transactionData.put("amount", amount);
-            transactionData.put(transmissionDateTime, transmissionDateTime);
-//            transactionData.put(transmissionDateTimeLocal, transmissionDateTimeLocal);
-            transactionData.put("terminalID", terminalID);
-            transactionData.put("merchantID", merchantID);
+            transactionData.put("pan", pan);
+            transactionData.put("amountTransaction", amount);
+            transactionData.put("recipientEmail", email);
+            transactionData.put("TID", terminalID);
+            transactionData.put("dateTimeTransmission", transmissionDateTime);
+//          transactionData.put("MID", merchantID);
             transactionData.put("currencyCode", currencyCode);
-            transactionData.put("senderAccount", senderAccount);
-            transactionData.put("receiverAccount", receiverAccount);
 
             // Get response
             Map<String, Object> postResponse = httpClient.post(SEND_MONEY_ENDPOINT, transactionData);
-
+            System.out.println("====================================" + postResponse);
             response = (ISOMsg) request.clone();
-            response.setMTI("0210");
+//            if (postResponse.get("OK")) {
+//                response.setMTI("0210");
+//            }
 
-            response.set(39, postResponse.get("code").toString()); // response code
-            response.set(104, postResponse.get("message").toString()); // Transaction description
-            response.set(7, postResponse.get("timestamp").toString()); // Transmission date and time
+            //response.set(39, postResponse.get("code").toString()); // response code
+            //response.set(104, postResponse.get("message").toString()); // Transaction description
+            //response.set(7, postResponse.get("timestamp").toString()); // Transmission date and time
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
@@ -65,7 +71,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
          * 2100000000000001001011151500000001151500101101000000100011234567
          * 8912345600800312381007143850560714385056**/
 //         communicate with backend
-        String DEPOSIT_MONEY_ENDPOINT = "http://41.215.130.247:10203/api/deposit/";
+        String DEPOSIT_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/deposit/";
 
         ISOMsg response = null;
         try {
@@ -74,7 +80,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             String processingCode = (String) request.getValue(3);
             String amountTransaction = (String) request.getValue(4);
             String dateTimeTransmission = (String) request.getValue(7);
-            String terminal = (String) request.getValue(41);//Terminal ID
+            String Terminal = (String) request.getValue(41);//Terminal ID
             String merchant = (String) request.getValue(42);//Merchant ID
             String customerPan = (String) request.getValue(47);
             String amountTransactionCurrencyCode = (String) request.getValue(49);// Currency Code
@@ -87,14 +93,15 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             depositData.put("processingCode", processingCode);
             depositData.put("amountTransaction", amountTransaction);
             depositData.put("dateTimeTransmission", dateTimeTransmission);
-            depositData.put("tid", terminal);
-            depositData.put("mid", merchant);
+            depositData.put("terminal", Terminal);
+            depositData.put("merchant", merchant);
             depositData.put("customerPan", customerPan);
-            depositData.put("amountTransactionCurrencyCode", amountTransactionCurrencyCode);
+            depositData.put("currencyCode", amountTransactionCurrencyCode);
 
 
             // send the request to backend
             Map<String, Object> postResponse = httpClient.post(DEPOSIT_MONEY_ENDPOINT, depositData);
+
 
 
             // communicate with backend
@@ -123,6 +130,8 @@ public class TransactionProcessorImpl implements TransactionProcessor {
      */
     @Override
     public ISOMsg processReceiveMoney(ISOMsg isoMsg) {
+//        String  RECEIVE_ENDPOINT = "http://192.168.254.190:2019/api/auth/receive_money";
+        String RECEIVE_ENDPOINT = "http://127.0.0.1:10203/api/auth/receive_money/";
         ISOMsg isoMsgResponse = (ISOMsg) isoMsg.clone();
 
         HashMap<String, String> isoMsgToSend = new HashMap<>();
@@ -135,9 +144,11 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(47));
         isoMsgToSend.put("txnCurrencyCode", isoMsg.getString(49));
 
-        Map<String, String> response = httpClient.post("http://192.168.254.190:10203/api/auth/receive_money",isoMsgToSend);
+        Map<String, String> response = httpClient.post(RECEIVE_ENDPOINT,isoMsgToSend);
+
 
         System.out.println("*************** Response from web portal *********************");
+        System.out.println("========= " + response);
         System.out.println("response code: "+response.get("message"));
         System.out.println("txn amount: "+response.get("txnAmount"));
         System.out.println("*************** Response from web portal *********************");
@@ -154,12 +165,8 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
     @Override
     public ISOMsg processSale(ISOMsg request) {
-
-        /**01560200F238048000C18000000000000600000051XXXXXXXXXX3147
-         * 2100000000000001001011151500000001151500101101000000100011234567
-         * 8912345600800312381007143850560714385056**/
         // communicate with backend
-        String SALE_MONEY_ENDPOINT = "http://41.215.130.247:10203/api/sale/";
+        String SALE_MONEY_ENDPOINT = "http://127.0.0.1:10203/depositSale/";
 
         ISOMsg response = null;
         try {
