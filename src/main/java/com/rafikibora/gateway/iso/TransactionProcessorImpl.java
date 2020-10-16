@@ -44,7 +44,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             transactionData.put("amountTransaction", amount);
             transactionData.put("recipientEmail", email);
             transactionData.put("TID", terminalID);
-            transactionData.put("dateTimeTransmission", transmissionDateTime);
+            transactionData.put("dateTime", transmissionDateTime);
             //transactionData.put("MID", merchantID);
             transactionData.put("currencyCode", currencyCode);
 
