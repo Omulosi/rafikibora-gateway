@@ -9,9 +9,19 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * This class includes methods for processing financial transactions.
+ * A financial transaction can be one of Send Money, Sale, Deposit Money or Withdraw money.
+ */
 public class TransactionProcessorImpl implements TransactionProcessor {
     private final HttpClient httpClient = new HttpClient();
 
+    /**
+     * Processes the send money transaction.
+     *
+     * @param request An ISOMsg with transaction data.
+     * @return IsoMsg An ISoMsg with appropriate response fields set.
+     */
     @Override
     public ISOMsg processSendMoney(ISOMsg request) {
         String SEND_MONEY_ENDPOINT = "http://localhost:2019/api/send_money";
