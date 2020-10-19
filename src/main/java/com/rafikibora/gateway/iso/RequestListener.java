@@ -16,6 +16,7 @@ import org.jpos.iso.ISOSource;
 public class RequestListener implements ISORequestListener {
 
     private final TransactionProcessorImpl transactionProcessor = new TransactionProcessorImpl();
+    private final AuthProcessor authProcessor = new AuthProcessorImpl();
 
     /**
      * Processes incoming iso message
@@ -30,6 +31,12 @@ public class RequestListener implements ISORequestListener {
 
         try {
             String mti = request.getMTI();
+
+            if ("0800".equals(mti)) {
+                ISOMsg responseISOMsg = authProcessor.login(request);
+                sender.send(responseISOMsg);
+                return true;
+            }
 
             if ("0200".equals(mti)) {
                 String processingCode = request.getString(3);

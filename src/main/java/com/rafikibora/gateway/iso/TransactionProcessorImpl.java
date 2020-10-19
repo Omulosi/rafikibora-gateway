@@ -2,6 +2,9 @@ package com.rafikibora.gateway.iso;
 
 import org.jpos.iso.ISOException;
 import org.jpos.iso.ISOMsg;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -28,6 +31,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         ISOMsg response = (ISOMsg) request.clone();
 
         try {
+            String token = request.getString(48);
             String pan = request.getString(2);
             String amount = request.getString(4);
             String transmissionDateTime = request.getString(7); //YYMMDDhhmmss
@@ -47,10 +51,18 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             //transactionData.put("MID", merchantID);
             transactionData.put("currencyCode", currencyCode);
 
+
+            // Add authentication header
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("Authorization", "Bearer "+token);
+
+            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(transactionData, headers);
+
             // Get response
             RestTemplate httpClient = new RestTemplate();
-            String postResponse = httpClient.postForObject(SEND_MONEY_ENDPOINT, transactionData, String.class);
-            System.out.println("====================================" + postResponse);
+
+            String postResponse = httpClient.postForObject(SEND_MONEY_ENDPOINT, entity, String.class);
 
             if ("OK".equalsIgnoreCase(postResponse.trim())) {
                 response.setMTI("0210");
@@ -147,8 +159,8 @@ public class TransactionProcessorImpl implements TransactionProcessor {
      */
     @Override
     public ISOMsg processReceiveMoney(ISOMsg isoMsg) {
-//        String  RECEIVE_ENDPOINT = "http://192.168.254.190:2019/api/auth/receive_money";
-        String RECEIVE_ENDPOINT = "http://127.0.0.1:10203/api/auth/receive_money";
+        final String RECEIVE_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/receive_money";
+
         ISOMsg isoMsgResponse = (ISOMsg) isoMsg.clone();
 
         HashMap<String, String> isoMsgToSend = new HashMap<>();
@@ -161,8 +173,16 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(47));
         isoMsgToSend.put("currency", isoMsg.getString(49));
 
-        Map<String, String> response = httpClient.post(RECEIVE_ENDPOINT,isoMsgToSend);
+        // Add authentication header
+        String authToken = isoMsg.getString(48);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("Authorization", "Bearer "+authToken);
 
+//        Map<String, String> response = httpClient.post(RECEIVE_ENDPOINT,isoMsgToSend);
+
+        HttpEntity<Map<String, String>> entity = new HttpEntity<>(isoMsgToSend, headers);
+        Map<String, String> response = httpClient.post(RECEIVE_MONEY_ENDPOINT,entity);
 
         System.out.println("*************** Response from web portal *********************");
         System.out.println("========= " + response);
@@ -240,6 +260,5 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
         return response;
     }
-
 }
 
