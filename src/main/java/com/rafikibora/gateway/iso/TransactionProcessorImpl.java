@@ -75,7 +75,9 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 //         communicate with backend
         String DEPOSIT_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/deposit/";
 
-        ISOMsg response = null;
+//        ISOMsg response = null;
+        ISOMsg response = (ISOMsg) request.clone();
+
         try {
             //Extracting Iso fields
             String merchantPan = (String) request.getValue(2);
@@ -102,7 +104,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
 
             // send the request to backend
-            Map<String, Object> postResponse = httpClient.post(DEPOSIT_MONEY_ENDPOINT, depositData);
+        //    Map<String, Object> postResponse = httpClient.post(DEPOSIT_MONEY_ENDPOINT, depositData);
 
 
 
@@ -111,9 +113,22 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
 
             // build response iso
-            response = (ISOMsg) request.clone();
-            response.setMTI("0210");
-            response.set(39, "00");
+//            response.setMTI("0210");
+//            response.set(39, "00");
+            // Get response
+            RestTemplate httpClient = new RestTemplate();
+            String postResponse = httpClient.postForObject(DEPOSIT_MONEY_ENDPOINT, depositData, String.class);
+            System.out.println("====================================" + postResponse);
+
+            if ("OK".equalsIgnoreCase(postResponse.trim())) {
+                response.setMTI("0210");
+                // Approve transaction
+                response.set(39, "00");
+            } else {
+                // Transaction declined: send an error
+                response.set(39, "06");
+            }
+
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
@@ -203,8 +218,21 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
             // build response iso
             response = (ISOMsg) request.clone();
+            System.out.println("====================================" + postResponse);
             response.setMTI("0210");
             response.set(39, "00");
+//            RestTemplate httpClient = new RestTemplate();
+//            String postResponse = httpClient.postForObject(SALE_MONEY_ENDPOINT, saleData, String.class);
+//            System.out.println("====================================" + postResponse);
+//
+//            if ("OK".equalsIgnoreCase(postResponse.trim())) {
+//                response.setMTI("0210");
+//                // Approve transaction
+//                response.set(39, "00");
+//            } else {
+//                // Transaction declined: send an error
+//                response.set(39, "06");
+//            }
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
