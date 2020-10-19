@@ -144,8 +144,8 @@ public class TransactionProcessorImpl implements TransactionProcessor {
      */
     @Override
     public ISOMsg processReceiveMoney(ISOMsg isoMsg) {
-//        String  RECEIVE_ENDPOINT = "http://192.168.254.190:2019/api/auth/receive_money";
-        String RECEIVE_ENDPOINT = "http://127.0.0.1:10203/api/auth/receive_money";
+        final String RECEIVE_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/receive_money";
+
         ISOMsg isoMsgResponse = (ISOMsg) isoMsg.clone();
 
         HashMap<String, String> isoMsgToSend = new HashMap<>();
@@ -158,8 +158,16 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(47));
         isoMsgToSend.put("currency", isoMsg.getString(49));
 
-        Map<String, String> response = httpClient.post(RECEIVE_ENDPOINT,isoMsgToSend);
+        // Add authentication header
+        String authToken = isoMsg.getString(48);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("Authorization", "Bearer "+authToken);
 
+//        Map<String, String> response = httpClient.post(RECEIVE_ENDPOINT,isoMsgToSend);
+
+        HttpEntity<Map<String, String>> entity = new HttpEntity<>(isoMsgToSend, headers);
+        Map<String, String> response = httpClient.post(RECEIVE_MONEY_ENDPOINT,entity);
 
         System.out.println("*************** Response from web portal *********************");
         System.out.println("========= " + response);

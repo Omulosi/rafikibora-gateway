@@ -4,5 +4,5 @@ import org.jpos.iso.ISOMsg;
 
 public interface AuthProcessor {
 
-    public ISOMsg login (ISOMsg isoMsg);
+    ISOMsg login (ISOMsg isoMsg);
 }
