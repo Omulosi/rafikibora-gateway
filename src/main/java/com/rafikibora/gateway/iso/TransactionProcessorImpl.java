@@ -21,6 +21,11 @@ public class TransactionProcessorImpl implements TransactionProcessor {
     String authToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3YW5nZWNpMUBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNjAzMTE5NTk0LCJleHAiOjE2MDM0Nzk1OTR9.MhA_ri8xL-39ANsCNBL6rxVNryTr3ZD_Fboy4B_2GBpIZMHSLfRXekuF4Eve7I_MY3tODeR7cYQd9K2h4TdRCA";
 
 
+    private final String SEND_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/transactions/send_money";
+    private final String DEPOSIT_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/transactions/deposit/";
+    private final String SALE_ENDPOINT = "http://127.0.0.1:10203/api/transactions/sale";
+    private final String RECEIVE_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/transactions/receive_money";
+
     /**
      * Processes the send money transaction.
      *
@@ -28,9 +33,9 @@ public class TransactionProcessorImpl implements TransactionProcessor {
      * @return IsoMsg An ISoMsg with appropriate response fields set.
      */
     @Override
-    public ISOMsg processSendMoney(ISOMsg request) {
-        String SEND_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/transactions/send_money";
+    public ISOMsg processSendMoney(ISOMsg request) throws ISOException {
         ISOMsg response = (ISOMsg) request.clone();
+        response.setMTI("0210");
 
         try {
 //            String token = request.getString(48);
@@ -41,6 +46,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             //String merchantID = request.getString(42); // Merchant ID
             String email = request.getString(47); // Currency Code
             String currencyCode = request.getString(49); // Currency Code
+            String processingCode = request.getString(3); // processing Code
 
 
             // Assemble data to send to backend
@@ -48,7 +54,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             transactionData.put("pan", pan);
             transactionData.put("amountTransaction", amount);
             transactionData.put("recipientEmail", email);
-            transactionData.put("TID", terminalID);
+            transactionData.put("terminalID", terminalID);
             transactionData.put("dateTime", transmissionDateTime);
             //transactionData.put("MID", merchantID);
             transactionData.put("currencyCode", currencyCode);
@@ -59,16 +65,14 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             headers.setContentType(MediaType.APPLICATION_JSON);
             headers.set("Authorization", "Bearer "+authToken);
 
+
             HttpEntity<Map<String, Object>> entity = new HttpEntity<>(transactionData, headers);
 
-            // Get response
             RestTemplate httpClient = new RestTemplate();
-
             String postResponse = httpClient.postForObject(SEND_MONEY_ENDPOINT, entity, String.class);
 
             if ("OK".equalsIgnoreCase(postResponse.trim())) {
-                response.setMTI("0210");
-                // Approve transaction
+                // Transaction approved
                 response.set(39, "00");
             } else {
                 // Transaction declined: send an error
@@ -81,77 +85,63 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         return response;
     }
 
+    /**
+     * Processes deposit money transaction
+     *
+     * @param request An ISOMsg with transaction data.
+     * @return IsoMsg An ISoMsg with appropriate response fields set.
+     */
     @Override
-    public ISOMsg processDeposit(ISOMsg request) {
-        /**01560200F238048000C18000000000000600000051XXXXXXXXXX3147
-         * 2100000000000001001011151500000001151500101101000000100011234567
-         * 8912345600800312381007143850560714385056**/
-//         communicate with backend
-        String DEPOSIT_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/deposit/";
 
-//        ISOMsg response = null;
+    public ISOMsg processDeposit(ISOMsg request) throws ISOException {
         ISOMsg response = (ISOMsg) request.clone();
+        response.setMTI("0210");
 
         try {
-            //Extracting Iso fields
-            String merchantPan = (String) request.getValue(2);
-            String processingCode = (String) request.getValue(3);
-            String amountTransaction = (String) request.getValue(4);
-            String dateTimeTransmission = (String) request.getValue(7);
-            String Terminal = (String) request.getValue(41);//Terminal ID
-            String merchant = (String) request.getValue(42);//Merchant ID
-            String customerPan = (String) request.getValue(47);
-            String amountTransactionCurrencyCode = (String) request.getValue(49);// Currency Code
+            // Extract required data
+            String token = request.getString(48);
+            String merchantPan = request.getString(2);
+            String processingCode =  request.getString(3);
+            String amountTransaction =  request.getString(4);
+            String dateTimeTransmission =  request.getString(7);
+            String terminalID =  request.getString(41);//Terminal ID
+            String merchantID =  request.getString(42);//Merchant ID
+            String customerPan =  request.getString(47);
+            String amountTransactionCurrencyCode =  request.getString(49);// Currency Code
 
 
-
-            // Get iso data and send to backend
+            // Build data object to send to backend
             Map<String, Object> depositData= new HashMap<>();
             depositData.put("merchantPan", merchantPan);
             depositData.put("processingCode", processingCode);
             depositData.put("amountTransaction", amountTransaction);
             depositData.put("dateTimeTransmission", dateTimeTransmission);
-            depositData.put("terminal", Terminal);
-            depositData.put("merchant", merchant);
+            depositData.put("terminal", terminalID);
+            depositData.put("merchant", merchantID);
             depositData.put("customerPan", customerPan);
             depositData.put("currencyCode", amountTransactionCurrencyCode);
 
+            // Add authentication header
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("Authorization", "Bearer " + token);
 
-            // send the request to backend
-        //    Map<String, Object> postResponse = httpClient.post(DEPOSIT_MONEY_ENDPOINT, depositData);
+            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(depositData, headers);
 
-
-
-            // communicate with backend
-//            Map<String, Object> data = httpClient.get("http://41.215.130.247:2019/api/deposit/");
-
-
-            // build response iso
-//            response.setMTI("0210");
-//            response.set(39, "00");
-            // Get response
             RestTemplate httpClient = new RestTemplate();
-            String postResponse = httpClient.postForObject(DEPOSIT_MONEY_ENDPOINT, depositData, String.class);
-            System.out.println("====================================" + postResponse);
-
+            String postResponse = httpClient.postForObject(DEPOSIT_MONEY_ENDPOINT, entity, String.class);
             if ("OK".equalsIgnoreCase(postResponse.trim())) {
-                response.setMTI("0210");
-                // Approve transaction
+                // Transaction approved
                 response.set(39, "00");
             } else {
-                // Transaction declined: send an error
+                // Transaction declined
                 response.set(39, "06");
             }
-
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
-
         return response;
-
-
-
     }
 
     /**
@@ -160,10 +150,9 @@ public class TransactionProcessorImpl implements TransactionProcessor {
      * @return isoMsg
      */
     @Override
-    public ISOMsg processReceiveMoney(ISOMsg isoMsg) {
-        final String RECEIVE_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/receive_money";
-
+    public ISOMsg processReceiveMoney(ISOMsg isoMsg) throws ISOException {
         ISOMsg isoMsgResponse = (ISOMsg) isoMsg.clone();
+        isoMsgResponse.setMTI("0210");
 
         HashMap<String, String> isoMsgToSend = new HashMap<>();
 
@@ -194,7 +183,6 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         System.out.println("*************** Response from web portal *********************");
 
         try {
-            isoMsgResponse.setMTI("0210");
             isoMsgResponse.set(39, response.get("message"));
             isoMsgResponse.set(4, response.get("txnAmount"));
         } catch (ISOException e) {
@@ -204,14 +192,20 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         return isoMsgResponse;
     }
 
+    /**
+     * Processes sale transaction
+     *
+     * @param request An ISOMsg with transaction data.
+     * @return IsoMsg An ISoMsg with appropriate response fields set.
+     */
     @Override
-    public ISOMsg processSale(ISOMsg request) {
-        // communicate with backend
-        String SALE_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/sale";
+    public ISOMsg processSale(ISOMsg request) throws ISOException {
+        ISOMsg response = (ISOMsg) request.clone();
+        response.setMTI("0210");
 
-        ISOMsg response = null;
         try {
-            //Extracting Iso fields
+            // Extract required data
+            String token = request.getString(48);
             String primaryAccNo = (String) request.getValue(2);
             String processingCode = (String) request.getValue(3);
             String amountTransaction = (String) request.getValue(4);
@@ -220,7 +214,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             String merchant = (String) request.getValue(42);
             String currencyCode = (String) request.getValue(49);
 
-            // Get iso data and send to backend
+            // Build data object to send to backend
             Map<String, Object> saleData= new HashMap<>();
             saleData.put("pan", primaryAccNo);
             saleData.put("processingCode", processingCode);
@@ -230,38 +224,28 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             saleData.put("merchant", merchant);
             saleData.put("currencyCode", currencyCode);
 
+            // Add authentication header
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("Authorization", "Bearer " + token);
 
-            // send the request to backend
-            Map<String, Object> postResponse = httpClient.post(SALE_MONEY_ENDPOINT, saleData);
+            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(saleData, headers);
+
+            RestTemplate httpClient = new RestTemplate();
+            String postResponse = httpClient.postForObject(SALE_ENDPOINT, entity, String.class);
 
 
-            // communicate with backend
-           //Map<String, Object> data = httpClient.get("http://41.215.130.247:2019/api/sale/");
-
-
-            // build response iso
-            response = (ISOMsg) request.clone();
-            System.out.println("====================================" + postResponse);
-            response.setMTI("0210");
-            response.set(39, "00");
-//            RestTemplate httpClient = new RestTemplate();
-//            String postResponse = httpClient.postForObject(SALE_MONEY_ENDPOINT, saleData, String.class);
-//            System.out.println("====================================" + postResponse);
-//
-//            if ("OK".equalsIgnoreCase(postResponse.trim())) {
-//                response.setMTI("0210");
-//                // Approve transaction
-//                response.set(39, "00");
-//            } else {
-//                // Transaction declined: send an error
-//                response.set(39, "06");
-//            }
+            if ("OK".equalsIgnoreCase(postResponse.trim())) {
+                // Transaction approved
+                response.set(39, "00");
+            } else {
+                // Transaction declined
+                response.set(39, "06");
+            }
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
-
         return response;
     }
 }
-
