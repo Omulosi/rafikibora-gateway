@@ -39,6 +39,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             //String merchantID = request.getString(42); // Merchant ID
             String email = request.getString(47); // Currency Code
             String currencyCode = request.getString(49); // Currency Code
+            String processingCode = request.getString(3); // processing Code
 
 
             // Assemble data to send to backend
@@ -46,7 +47,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             transactionData.put("pan", pan);
             transactionData.put("amountTransaction", amount);
             transactionData.put("recipientEmail", email);
-            transactionData.put("TID", terminalID);
+            transactionData.put("terminalID", terminalID);
             transactionData.put("dateTime", transmissionDateTime);
             //transactionData.put("MID", merchantID);
             transactionData.put("currencyCode", currencyCode);
@@ -55,7 +56,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             // Add authentication header
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.set("Authorization", "Bearer "+token);
+            headers.set("Authorization", "Bearer " + token);
 
             HttpEntity<Map<String, Object>> entity = new HttpEntity<>(transactionData, headers);
 
@@ -66,7 +67,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
             if ("OK".equalsIgnoreCase(postResponse.trim())) {
                 response.setMTI("0210");
-                // Approve transaction
+                // Transaction approved
                 response.set(39, "00");
             } else {
                 // Transaction declined: send an error

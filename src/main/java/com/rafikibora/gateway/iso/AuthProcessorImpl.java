@@ -36,7 +36,7 @@ public class AuthProcessorImpl implements AuthProcessor {
             Map<String, Object> postResponse = httpClient.post(AUTH_ENDPOINT, authData);
 
             if (postResponse.get("status") == "OK") {
-                String token = postResponse.get("token").toString();
+                String token = postResponse.get("authToken").toString();
                 response.set(39, "00");
                 response.set(48, token);
             } else {
