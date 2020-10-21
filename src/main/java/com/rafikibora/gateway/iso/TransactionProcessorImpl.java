@@ -18,6 +18,8 @@ import java.util.logging.Logger;
  */
 public class TransactionProcessorImpl implements TransactionProcessor {
     private final HttpClient httpClient = new HttpClient();
+    String authToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3YW5nZWNpMUBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNjAzMTE5NTk0LCJleHAiOjE2MDM0Nzk1OTR9.MhA_ri8xL-39ANsCNBL6rxVNryTr3ZD_Fboy4B_2GBpIZMHSLfRXekuF4Eve7I_MY3tODeR7cYQd9K2h4TdRCA";
+
 
     /**
      * Processes the send money transaction.
@@ -31,7 +33,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         ISOMsg response = (ISOMsg) request.clone();
 
         try {
-            String token = request.getString(48);
+//            String token = request.getString(48);
             String pan = request.getString(2);
             String amount = request.getString(4);
             String transmissionDateTime = request.getString(7); //YYMMDDhhmmss
@@ -55,7 +57,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             // Add authentication header
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.set("Authorization", "Bearer "+token);
+            headers.set("Authorization", "Bearer "+authToken);
 
             HttpEntity<Map<String, Object>> entity = new HttpEntity<>(transactionData, headers);
 
@@ -174,7 +176,8 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         isoMsgToSend.put("currency", isoMsg.getString(49));
 
         // Add authentication header
-        String authToken = isoMsg.getString(48);
+//        String authToken = isoMsg.getString(48);
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("Authorization", "Bearer "+authToken);
