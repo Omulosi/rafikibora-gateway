@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+/**
+ * This class encapsulates methods for consuming a remote API
+ */
 public class HttpClient {
     RestTemplate httpClient = new RestTemplate();
 

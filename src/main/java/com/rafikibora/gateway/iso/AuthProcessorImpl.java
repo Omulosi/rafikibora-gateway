@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 public class AuthProcessorImpl implements AuthProcessor {
 
     private final HttpClient httpClient = new HttpClient();
+    private final String AUTH_ENDPOINT = "http://41.215.130.247:10203/api/auth/login";
 
     /**
      * Process authentication requests
@@ -19,7 +20,6 @@ public class AuthProcessorImpl implements AuthProcessor {
     @Override
     public ISOMsg login (ISOMsg request) {
         ISOMsg response = (ISOMsg) request.clone();
-        final String AUTH_ENDPOINT = "http://41.215.130.247:10203/api/auth/login";
 
         try {
             response.setMTI("0810");
@@ -33,6 +33,7 @@ public class AuthProcessorImpl implements AuthProcessor {
             authData.put("password", password);
 
             Map<String, Object> postResponse = httpClient.post(AUTH_ENDPOINT, authData);
+            System.out.println("============: post response " + postResponse);
 
             if (postResponse.get("status") == "OK") {
                 String authToken = postResponse.get("authToken").toString();

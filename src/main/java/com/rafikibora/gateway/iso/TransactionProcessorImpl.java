@@ -24,7 +24,6 @@ public class TransactionProcessorImpl implements TransactionProcessor {
     private final String SALE_ENDPOINT = "http://127.0.0.1:10203/api/transactions/sale";
     private final String RECEIVE_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/transactions/receive_money";
 
-
     /**
      * Processes the send money transaction.
      *
@@ -190,6 +189,12 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         return isoMsgResponse;
     }
 
+    /**
+     * Processes sale transaction
+     *
+     * @param request An ISOMsg with transaction data.
+     * @return IsoMsg An ISoMsg with appropriate response fields set.
+     */
     @Override
     public ISOMsg processSale(ISOMsg request) throws ISOException {
         ISOMsg response = (ISOMsg) request.clone();
@@ -206,7 +211,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             String merchant = (String) request.getValue(42);
             String currencyCode = (String) request.getValue(49);
 
-            // Build
+            // Build data object to send to backend
             Map<String, Object> saleData= new HashMap<>();
             saleData.put("pan", primaryAccNo);
             saleData.put("processingCode", processingCode);

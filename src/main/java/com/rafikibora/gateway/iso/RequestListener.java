@@ -47,28 +47,32 @@ public class RequestListener implements ISORequestListener {
                     case "21":
                         ISOMsg respnseISOMsg = transactionProcessor.processDeposit(request);
                         sender.send(respnseISOMsg);
-                        return true;
-                    // Purchase/Sale TTC
+                        returnVal = true;
+                        break;
+                    // Purchase/Sale TTC (00)
                     case "00":
                         ISOMsg SalerespnseISOMsg = transactionProcessor.processSale(request);
                         sender.send(SalerespnseISOMsg);
-                        return true;
+                        returnVal = true;
+                        break;
                     // Withdrawal TTC (01)
                     case "01":
                         ISOMsg withdrawIsoMsg = transactionProcessor.processReceiveMoney(request);
                         sender.send(withdrawIsoMsg);
-                        return true;
-                    // Send money TTC (40)
+                        returnVal = true;
+                        break;
+                    // Send money TTC (26)
                     case "26":
                         ISOMsg responseISOMsg = transactionProcessor.processSendMoney(request);
                         sender.send(responseISOMsg);
-                        return true;
+                        returnVal = true;
+                        break;
                     default:
                         returnVal = false;
                 }
             }
         } catch (ISOException | IOException | NullPointerException ex) {
-            System.out.println("ERROR MESSAGE.... "+ex.getMessage());
+            System.out.println("ERROR MESSAGE.... " + ex.getMessage());
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, null, ex);
         }
         return returnVal;
