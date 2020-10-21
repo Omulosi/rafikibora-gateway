@@ -19,7 +19,7 @@ public class AuthProcessorImpl implements AuthProcessor {
     @Override
     public ISOMsg login (ISOMsg request) {
         ISOMsg response = (ISOMsg) request.clone();
-        String AUTH_ENDPOINT = "http://41.215.130.247:2019/api/auth/login";
+        final String AUTH_ENDPOINT = "http://41.215.130.247:10203/api/auth/login";
 
         try {
             response.setMTI("0810");
@@ -32,13 +32,16 @@ public class AuthProcessorImpl implements AuthProcessor {
             authData.put("email", email);
             authData.put("password", password);
 
-
             Map<String, Object> postResponse = httpClient.post(AUTH_ENDPOINT, authData);
 
             if (postResponse.get("status") == "OK") {
-                String token = postResponse.get("authToken").toString();
+                String authToken = postResponse.get("authToken").toString();
                 response.set(39, "00");
-                response.set(48, token);
+                response.set(48, authToken);
+                System.out.println("***********RESPONSE FROM SERVER***********");
+                System.out.println("token: ");
+                System.out.println(authToken);
+                System.out.println("***********RESPONSE FROM SERVER***********");
             } else {
                 response.set(39, "06");
             }
