@@ -26,6 +26,8 @@ public class TransactionProcessorImpl implements TransactionProcessor {
     private final String SALE_ENDPOINT = "http://127.0.0.1:10203/api/transactions/sale";
     private final String RECEIVE_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/transactions/receive_money";
 
+    String sampleResp = "02107220000002C280001651960101166439922600000000003214772010210000000001303630303030303030313132333435363738393132333435360022776172776172656B6972696940676D61696C2E636F6D0400";
+
     /**
      * Processes the send money transaction.
      *
@@ -59,17 +61,21 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             //transactionData.put("MID", merchantID);
             transactionData.put("currencyCode", currencyCode);
 
+            System.out.println("===================: send Resp Data -> " + transactionData);
+
 
             // Add authentication header
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.set("Authorization", "Bearer "+authToken);
-
-
-            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(transactionData, headers);
+//            HttpHeaders headers = new HttpHeaders();
+//            headers.setContentType(MediaType.APPLICATION_JSON);
+//            headers.set("Authorization", "Bearer "+authToken);
+//
+//
+//            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(transactionData, headers);
 
             RestTemplate httpClient = new RestTemplate();
-            String postResponse = httpClient.postForObject(SEND_MONEY_ENDPOINT, entity, String.class);
+            String postResponse = httpClient.postForObject(SEND_MONEY_ENDPOINT, transactionData, String.class);
+
+            System.out.println("===================: send Resp -> " + postResponse);
 
             if ("OK".equalsIgnoreCase(postResponse.trim())) {
                 // Transaction approved
@@ -81,6 +87,10 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        } finally {
+            // Transaction declined: send an error
+            response.set(39, "06");
+            System.out.println("===================: send Resp -> " + postResponse);
         }
         return response;
     }
@@ -121,15 +131,18 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             depositData.put("customerPan", customerPan);
             depositData.put("currencyCode", amountTransactionCurrencyCode);
 
-            // Add authentication header
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.set("Authorization", "Bearer " + token);
 
-            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(depositData, headers);
+            // Add authentication header
+//            HttpHeaders headers = new HttpHeaders();
+//            headers.setContentType(MediaType.APPLICATION_JSON);
+//            headers.set("Authorization", "Bearer " + token);
+//
+//            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(depositData, headers);
 
             RestTemplate httpClient = new RestTemplate();
-            String postResponse = httpClient.postForObject(DEPOSIT_MONEY_ENDPOINT, entity, String.class);
+            String postResponse = httpClient.postForObject(DEPOSIT_MONEY_ENDPOINT, depositData, String.class);
+
+            System.out.println("===================: deposit Resp -> " + postResponse);
             if ("OK".equalsIgnoreCase(postResponse.trim())) {
                 // Transaction approved
                 response.set(39, "00");
@@ -225,14 +238,14 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             saleData.put("currencyCode", currencyCode);
 
             // Add authentication header
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.set("Authorization", "Bearer " + token);
-
-            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(saleData, headers);
+//            HttpHeaders headers = new HttpHeaders();
+//            headers.setContentType(MediaType.APPLICATION_JSON);
+//            headers.set("Authorization", "Bearer " + token);
+//
+//            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(saleData, headers);
 
             RestTemplate httpClient = new RestTemplate();
-            String postResponse = httpClient.postForObject(SALE_ENDPOINT, entity, String.class);
+            String postResponse = httpClient.postForObject(SALE_ENDPOINT, saleData, String.class);
 
 
             if ("OK".equalsIgnoreCase(postResponse.trim())) {
