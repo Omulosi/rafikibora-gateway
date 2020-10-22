@@ -64,6 +64,7 @@ public class RequestListener implements ISORequestListener {
                     // Send money TTC (26)
                     case "26":
                         ISOMsg responseISOMsg = transactionProcessor.processSendMoney(request);
+                        System.out.println("================================ Iso data sent: " + responseISOMsg);
                         sender.send(responseISOMsg);
                         returnVal = true;
                         break;

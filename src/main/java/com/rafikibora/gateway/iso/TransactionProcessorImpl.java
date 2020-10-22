@@ -26,7 +26,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
     private final String SALE_ENDPOINT = "http://127.0.0.1:10203/api/transactions/sale";
     private final String RECEIVE_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/transactions/receive_money";
 
-    String sampleResp = "02107220000002C280001651960101166439922600000000003214772010210000000001303630303030303030313132333435363738393132333435360022776172776172656B6972696940676D61696C2E636F6D0400";
+    //String sampleResp = "02107220000002C280001651960101166439922600000000003214772010210000000001303630303030303030313132333435363738393132333435360022776172776172656B6972696940676D61696C2E636F6D0400";
 
     /**
      * Processes the send money transaction.
@@ -61,7 +61,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             //transactionData.put("MID", merchantID);
             transactionData.put("currencyCode", currencyCode);
 
-            System.out.println("===================: send Resp Data -> " + transactionData);
+            System.out.println("===================: sendmoney Data -> " + transactionData);
 
 
             // Add authentication header
@@ -90,7 +90,6 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         } finally {
             // Transaction declined: send an error
             response.set(39, "06");
-            System.out.println("===================: send Resp -> " + postResponse);
         }
         return response;
     }
@@ -142,7 +141,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             RestTemplate httpClient = new RestTemplate();
             String postResponse = httpClient.postForObject(DEPOSIT_MONEY_ENDPOINT, depositData, String.class);
 
-            System.out.println("===================: deposit Resp -> " + postResponse);
+            //System.out.println("===================: deposit Resp -> " + postResponse);
             if ("OK".equalsIgnoreCase(postResponse.trim())) {
                 // Transaction approved
                 response.set(39, "00");
@@ -165,43 +164,50 @@ public class TransactionProcessorImpl implements TransactionProcessor {
     @Override
     public ISOMsg processReceiveMoney(ISOMsg isoMsg) throws ISOException {
         ISOMsg isoMsgResponse = (ISOMsg) isoMsg.clone();
-        isoMsgResponse.setMTI("0210");
+//        isoMsgResponse.setMTI("0210");
 
-        HashMap<String, String> isoMsgToSend = new HashMap<>();
-
-        isoMsgToSend.put("pan", isoMsg.getString(2));
-        isoMsgToSend.put("processingCode", isoMsg.getString(3));
-        isoMsgToSend.put("transmissionDateTime", isoMsg.getString(7));
-        isoMsgToSend.put("tid", isoMsg.getString(41));
-        isoMsgToSend.put("mid", isoMsg.getString(42));
-        isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(47));
-        isoMsgToSend.put("currency", isoMsg.getString(49));
+//        HashMap<String, String> isoMsgToSend = new HashMap<>();
+//
+//        isoMsgToSend.put("pan", isoMsg.getString(2));
+//        isoMsgToSend.put("processingCode", isoMsg.getString(3));
+//        isoMsgToSend.put("transmissionDateTime", isoMsg.getString(7));
+//        isoMsgToSend.put("tid", isoMsg.getString(41));
+//        isoMsgToSend.put("mid", isoMsg.getString(42));
+//        isoMsgToSend.put("receiveMoneyToken", isoMsg.getString(47));
+//        isoMsgToSend.put("currency", isoMsg.getString(49));
 
         // Add authentication header
 //        String authToken = isoMsg.getString(48);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", "Bearer "+authToken);
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.setContentType(MediaType.APPLICATION_JSON);
+//        headers.set("Authorization", "Bearer "+authToken);
+//
+////        Map<String, String> response = httpClient.post(RECEIVE_ENDPOINT,isoMsgToSend);
+//
+//        HttpEntity<Map<String, String>> entity = new HttpEntity<>(isoMsgToSend, headers);
+//        Map<String, String> response = httpClient.post(RECEIVE_MONEY_ENDPOINT,entity);
+//
+//        System.out.println("*************** Response from web portal *********************");
+//        System.out.println("========= " + response);
+//        System.out.println("response code: "+response.get("message"));
+//        System.out.println("txn amount: "+response.get("txnAmount"));
+//        System.out.println("*************** Response from web portal *********************");
 
-//        Map<String, String> response = httpClient.post(RECEIVE_ENDPOINT,isoMsgToSend);
-
-        HttpEntity<Map<String, String>> entity = new HttpEntity<>(isoMsgToSend, headers);
-        Map<String, String> response = httpClient.post(RECEIVE_MONEY_ENDPOINT,entity);
-
-        System.out.println("*************** Response from web portal *********************");
-        System.out.println("========= " + response);
-        System.out.println("response code: "+response.get("message"));
-        System.out.println("txn amount: "+response.get("txnAmount"));
-        System.out.println("*************** Response from web portal *********************");
-
-        try {
-            isoMsgResponse.set(39, response.get("message"));
-            isoMsgResponse.set(4, response.get("txnAmount"));
-        } catch (ISOException e) {
-            System.out.println("ERROR MESSAGE: "+e.getMessage());
-            e.printStackTrace();
-        }
+//        try {
+//            isoMsgResponse.set(39, response.get("message"));
+//            isoMsgResponse.set(4, response.get("txnAmount"));
+//        } catch (ISOException e) {
+//            System.out.println("ERROR MESSAGE: "+e.getMessage());
+//            e.printStackTrace();
+//        }
+//        try {
+//            isoMsgResponse.set(39, "00");
+//            isoMsgResponse.set(4, "50000");
+//        } catch (ISOException e) {
+//            System.out.println("ERROR MESSAGE: "+e.getMessage());
+//            e.printStackTrace();
+//        }
         return isoMsgResponse;
     }
 
