@@ -27,10 +27,9 @@ public class RequestListener implements ISORequestListener {
      */
     public boolean process(ISOSource sender, ISOMsg request) {
 
-        boolean returnVal = false;
-
         try {
-            String mti = request.getMTI();
+            ISOMsg isoMsg = (ISOMsg) request.clone();
+            String mti = isoMsg.getMTI();
 
             if ("0800".equals(mti)) {
                 ISOMsg responseISOMsg = authProcessor.login(request);
@@ -45,30 +44,24 @@ public class RequestListener implements ISORequestListener {
                 switch (processingCode) {
                     // Deposit TTC (21)
                     case "21":
-                        ISOMsg respnseISOMsg = transactionProcessor.processDeposit(request);
-                        sender.send(respnseISOMsg);
-                        returnVal = true;
+                        sender.send(transactionProcessor.processDeposit(request));
                         break;
                     // Purchase/Sale TTC (00)
                     case "00":
-                        ISOMsg SalerespnseISOMsg = transactionProcessor.processSale(request);
-                        sender.send(SalerespnseISOMsg);
-                        returnVal = true;
+                        sender.send(transactionProcessor.processSale(request));
                         break;
                     // Withdrawal TTC (01)
                     case "01":
-                        ISOMsg withdrawIsoMsg = transactionProcessor.processReceiveMoney(request);
-                        sender.send(withdrawIsoMsg);
-                        returnVal = true;
+                        sender.send(transactionProcessor.processReceiveMoney(request));
                         break;
                     // Send money TTC (26)
                     case "26":
-                        ISOMsg responseISOMsg = transactionProcessor.processSendMoney(request);
-                        sender.send(responseISOMsg);
-                        returnVal = true;
+                        sender.send(transactionProcessor.processSendMoney(request));
                         break;
                     default:
-                        returnVal = false;
+                        isoMsg.setResponseMTI();
+                        isoMsg.set(39, "06");
+                        sender.send(isoMsg);
                 }
             }
         } catch (ISOException | IOException | NullPointerException ex) {
@@ -76,6 +69,6 @@ public class RequestListener implements ISORequestListener {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }
-        return returnVal;
+        return true;
     }
 }
