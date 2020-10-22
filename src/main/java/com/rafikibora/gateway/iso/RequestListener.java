@@ -10,7 +10,7 @@ import org.jpos.iso.ISORequestListener;
 import org.jpos.iso.ISOSource;
 
 /**
- * This class is a Request Listener that actually processes the incoming
+ * This class is a Request Listener that processes the incoming
  * ISO Messages
  */
 public class RequestListener implements ISORequestListener {
@@ -74,6 +74,7 @@ public class RequestListener implements ISORequestListener {
         } catch (ISOException | IOException | NullPointerException ex) {
             System.out.println("ERROR MESSAGE.... " + ex.getMessage());
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         return returnVal;
     }
