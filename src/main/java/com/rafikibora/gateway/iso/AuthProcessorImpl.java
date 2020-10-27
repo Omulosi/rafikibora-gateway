@@ -15,58 +15,35 @@ public class AuthProcessorImpl implements AuthProcessor {
 
     /**
      * Process authentication requests
+     *
      * @param request FROM pos
      * @return isoMsg
      */
     @Override
     public ISOMsg login (ISOMsg request) throws ISOException {
         try {
-           // request.setMTI("0810");
-            request.setResponseMTI(); // same to request.setMTI("0810");
-
-            String email = request.getString(57);
-            String password = request.getString(58);
-            System.out.println("========================");
-            System.out.println(email);
-            System.out.println(password);
-            System.out.println("========================");
+            request.setResponseMTI();
+            String emailPassword = request.getString(72);
+            int sep = emailPassword.indexOf("|");
+            String email = emailPassword.substring(0, sep);
+            String password = emailPassword.substring(sep + 1);
 
             // Assemble data to send to backend
             Map<String, Object> authData = new HashMap<>();
             authData.put("email", email);
             authData.put("password", password);
 
-//            Map<String, Object> postResponse = httpClient.post(AUTH_ENDPOINT, authData);
             Map<String, String> postResponse = httpClient.post(AUTH_ENDPOINT, authData);
-
-            System.out.println("============: post response " + postResponse);
-
-//            if (postResponse.get("status") == "OK") {
-//                String authToken = postResponse.get("authToken");
-//                request.set(39, "00");
-//                request.set(48, authToken);
-//                System.out.println("***********RESPONSE FROM SERVER***********");
-//                System.out.println("token: ");
-//                System.out.println(authToken);
-//                System.out.println("***********RESPONSE FROM SERVER***********");
-//            } else {
-//                request.set(39, "06");
-//            }
-
             String authToken = postResponse.get("authToken");
+
             request.set(39, "00");
-            request.set(48, authToken);
-            System.out.println("***********RESPONSE FROM SERVER***********");
-            System.out.println("token: ");
-            System.out.println(authToken);
-            System.out.println("***********RESPONSE FROM SERVER***********");
+            request.set(72, authToken);
 
         } catch (Exception ex) {
             request.set(39, "06");
-            request.set(48, "LOGIN FAILED");
+            request.set(72, "LOGIN FAILED");
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
-
         return request;
     }
 }

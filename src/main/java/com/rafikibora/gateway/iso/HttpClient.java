@@ -14,6 +14,12 @@ import java.util.logging.Logger;
 public class HttpClient {
     RestTemplate httpClient = new RestTemplate();
 
+    /**
+     * Send data via POST method
+     * @param url
+     * @param data
+     * @return
+     */
     public HashMap post (String url, Map data) {
         HashMap result = null;
 
@@ -28,6 +34,12 @@ public class HttpClient {
         return  result;
     }
 
+    /**
+     * Send data via POST method
+     * @param url
+     * @param data
+     * @return
+     */
     public HashMap post (String url, HttpEntity data) {
         HashMap result = null;
 
@@ -42,6 +54,11 @@ public class HttpClient {
         return  result;
     }
 
+    /**
+     * Fetch data
+     * @param url
+     * @return
+     */
     public HashMap get (String url) {
         HashMap result = null;
         try {

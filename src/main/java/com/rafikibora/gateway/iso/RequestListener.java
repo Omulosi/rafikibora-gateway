@@ -26,18 +26,17 @@ public class RequestListener implements ISORequestListener {
 
         try {
 
-            ISOMsg isoMsg = (ISOMsg) request.clone();
-            String mti = isoMsg.getMTI();
-            ISOMsg newIso = new ISOMsg();
+            String mti = request.getMTI();
+            ISOMsg responseISOMsg;
 
             if ("0800".equals(mti)) {
-               // ISOMsg responseISOMsg = authProcessor.login(request);
-                ISOMsg responseISOMsg=new ISOMsg();
-                responseISOMsg=request;
-                responseISOMsg.set(39,"00");
-                //responseISOMsg.set(48,"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3YW5nZWNpMUBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNjAzMTE5NTk0LCJleHAiOjE2MDM0Nzk1OTR9.MhA_ri8xL-39ANsCNBL6rxVNryTr3ZD_Fboy4B_2GBpIZMHSLfRXekuF4Eve7I_MY3tODeR7cYQd9K2h4TdRCA");
-                System.out.println(">>>>>>>++++"+responseISOMsg.getString(48));
-                System.out.println(">>>>>>>+39+"+responseISOMsg.getString(39));
+                responseISOMsg = authProcessor.login(request);
+
+                System.out.println("++++++++++++ ISO MSG TO SEND TO POS++++++++++++");
+                System.out.println("Response Code"+responseISOMsg.getString(39));
+                System.out.println("Auth Token: "+responseISOMsg.getString(72));
+                System.out.println("++++++++++++ ISO MSG TO SEND TO POS ++++++++++++");
+
                 sender.send(responseISOMsg);
                 return true;
             }
@@ -49,37 +48,47 @@ public class RequestListener implements ISORequestListener {
                 switch (processingCode) {
                     // Deposit TTC (21)
                     case "21":
-                        request=transactionProcessor.processDeposit(request);
-                        //sender.send(transactionProcessor.processDeposit(request));
-                        sender.send(request);
-                        System.out.println("===Packed ISO Message===\n "+ISOUtil.hexdump(request.pack()));
+                        responseISOMsg = transactionProcessor.processDeposit(request);
+
+                        System.out.println("++++++++++++ ISO MSG TO SEND TO POS++++++++++++");
+                        System.out.println("===Packed ISO Message===\n "+ISOUtil.hexdump(responseISOMsg.pack()));
                         System.out.println("======Resp Code==== "+request.getString(39));
+                        System.out.println("++++++++++++ ISO MSG TO SEND TO POS++++++++++++");
+
+                        sender.send(responseISOMsg);
                         break;
                     // Purchase/Sale TTC (00)
                     case "00":
-                        newIso = transactionProcessor.processSale(request);
-                        sender.send(newIso);
-                        System.out.println("===Packed ISO Message===\n "+ISOUtil.hexdump(request.pack()));
-                        System.out.println("======Resp Code "+request.getString(39));
+                        responseISOMsg = transactionProcessor.processSale(request);
+
+                        System.out.println("++++++++++++ ISO MSG TO SEND TO POS++++++++++++");
+                        System.out.println("===Packed ISO Message===\n "+ISOUtil.hexdump(responseISOMsg.pack()));
+                        System.out.println("======Resp Code==== "+request.getString(39));
+                        System.out.println("++++++++++++ ISO MSG TO SEND TO POS++++++++++++");
+
+                        sender.send(responseISOMsg);
                         break;
                     // Withdrawal TTC (01)
                     case "01":
+                        responseISOMsg = transactionProcessor.processReceiveMoney(request);
 
-                        newIso = transactionProcessor.processReceiveMoney(request);
-                        System.out.println("**** response code ****");
-                        System.out.println(newIso.getString(39));
-                        System.out.println("**** response code ****");
+                        System.out.println("++++++++++++ ISO MSG TO SEND TO POS++++++++++++");
+                        System.out.println("===Packed ISO Message===\n "+ISOUtil.hexdump(responseISOMsg.pack()));
+                        System.out.println("======Amount ===="+ responseISOMsg.getString(4));
+                        System.out.println("======Resp Code==== "+responseISOMsg.getString(39));
+                        System.out.println("++++++++++++ ISO MSG TO SEND TO POS++++++++++++");
 
-                        sender.send(newIso);
+                        sender.send(responseISOMsg);
                         break;
                     // Send money TTC (26)
                     case "26":
-                        sender.send(transactionProcessor.processSendMoney(request));
+                        responseISOMsg = transactionProcessor.processSendMoney(request);
+                        sender.send(responseISOMsg);
                         break;
                     default:
-                        isoMsg.setResponseMTI();
-                        isoMsg.set(39, "06");
-                        sender.send(isoMsg);
+                        request.setResponseMTI();
+                        request.set(39, "06");
+                        sender.send(request);
                 }
             }
         } catch (ISOException | IOException | NullPointerException ex) {

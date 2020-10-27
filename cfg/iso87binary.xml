@@ -409,10 +409,10 @@
           class="org.jpos.iso.IFB_NUMERIC"/>
   <isofield
           id="72"
-          length="4"
+          length="999"
           name="MESSAGE NUMBER LAST"
           pad="true"
-          class="org.jpos.iso.IFB_NUMERIC"/>
+          class="org.jpos.iso.IFB_LLLCHAR"/>
   <isofield
           id="73"
           length="6"
