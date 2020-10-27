@@ -5,6 +5,7 @@ import org.jpos.iso.ISOMsg;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -18,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class TransactionProcessorImpl implements TransactionProcessor {
     private final HttpClient httpClient = new HttpClient();
-    String authToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3YW5nZWNpMUBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNjAzMTE5NTk0LCJleHAiOjE2MDM0Nzk1OTR9.MhA_ri8xL-39ANsCNBL6rxVNryTr3ZD_Fboy4B_2GBpIZMHSLfRXekuF4Eve7I_MY3tODeR7cYQd9K2h4TdRCA";
+//    String authToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3YW5nZWNpMUBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNjAzMTE5NTk0LCJleHAiOjE2MDM0Nzk1OTR9.MhA_ri8xL-39ANsCNBL6rxVNryTr3ZD_Fboy4B_2GBpIZMHSLfRXekuF4Eve7I_MY3tODeR7cYQd9K2h4TdRCA";
 
 
     private final String SEND_MONEY_ENDPOINT = "http://127.0.0.1:10203/api/transactions/send_money";
@@ -51,15 +52,15 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             System.out.println("===================: send Money tx-Data -> " + transactionData);
 
             // Add authentication header
-//            HttpHeaders headers = new HttpHeaders();
-//            headers.setContentType(MediaType.APPLICATION_JSON);
-//            headers.set("Authorization", "Bearer "+authToken);
-//
-//
-//            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(transactionData, headers);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("Authorization", "Bearer "+clonedRequest.getString(48));
+
+
+            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(transactionData, headers);
 
             RestTemplate httpClient = new RestTemplate();
-            String postResponse = httpClient.postForObject(SEND_MONEY_ENDPOINT, transactionData, String.class);
+            String postResponse = httpClient.postForObject(SEND_MONEY_ENDPOINT, entity, String.class);
 
             System.out.println("===================: sendMoney resp from backend: -> " + postResponse);
 
@@ -117,25 +118,39 @@ public class TransactionProcessorImpl implements TransactionProcessor {
 
 
             // Add authentication header
-//            HttpHeaders headers = new HttpHeaders();
-//            headers.setContentType(MediaType.APPLICATION_JSON);
-//            headers.set("Authorization", "Bearer " + token);
-//
-//            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(depositData, headers);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("Authorization", "Bearer " + token);
+
+            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(depositData, headers);
 
             RestTemplate httpClient = new RestTemplate();
-            String postResponse = httpClient.postForObject(DEPOSIT_MONEY_ENDPOINT, depositData, String.class);
+            //String postResponse = httpClient.postForObject(DEPOSIT_MONEY_ENDPOINT, entity, String.class); // commented for test
 
-            //System.out.println("===================: deposit Resp -> " + postResponse);
-            if ("OK".equalsIgnoreCase(postResponse.trim())) {
-                // Transaction approved
-                clonedRequest.set(39, "00");
-            } else {
-                // Transaction declined
-                clonedRequest.set(39, "06");
+            ResponseEntity<String> rsp=httpClient.postForEntity(DEPOSIT_MONEY_ENDPOINT, entity, String.class);
+            System.out.println("++++++++++RESPONCE CODE" +rsp.getStatusCode());
+            if (rsp.getStatusCode().value() ==201){
+                System.out.println("=====RESPONCE BODY===="+rsp.getBody());
+                clonedRequest.set(39,"00");
+            }
+            else{
+                clonedRequest.set(39,"06");
             }
 
+            //System.out.println("===================: deposit Resp -> " + postResponse);
+//            if ("OK".equalsIgnoreCase(postResponse.trim())) {
+//                // Transaction approved
+//                clonedRequest.set(39, "00");
+//            } else {
+//                // Transaction declined
+//                clonedRequest.set(39, "06");
+//            }
+
+       //     clonedRequest.set(39, "00");
+
+
         } catch (Exception ex) {
+//            clonedRequest.set(39, "06");
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
         return clonedRequest;
@@ -161,7 +176,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         isoMsgToSend.put("currency", clonedRequest.getString(49));
 
         // Add authentication header
-//        String authToken = isoMsg.getString(48);
+        String authToken = clonedRequest.getString(48);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -179,8 +194,10 @@ public class TransactionProcessorImpl implements TransactionProcessor {
         System.out.println("*************** Response from web portal *********************");
 
         try {
-            clonedRequest.set(39, response.get("message"));
-            clonedRequest.set(4, response.get("txnAmount"));
+//            clonedRequest.set(39, response.get("message"));
+//            clonedRequest.set(4, response.get("txnAmount"));
+            clonedRequest.set(39, "00");
+            clonedRequest.set(4, "50000");
         } catch (ISOException e) {
             System.out.println("ERROR MESSAGE: "+e.getMessage());
             e.printStackTrace();
@@ -220,23 +237,33 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             saleData.put("currencyCode", currencyCode);
 
             // Add authentication header
-//            HttpHeaders headers = new HttpHeaders();
-//            headers.setContentType(MediaType.APPLICATION_JSON);
-//            headers.set("Authorization", "Bearer " + token);
-//
-//            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(saleData, headers);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("Authorization", "Bearer " + token);
+
+            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(saleData, headers);
 
             RestTemplate httpClient = new RestTemplate();
-            String postResponse = httpClient.postForObject(SALE_ENDPOINT, saleData, String.class);
+          //  String postResponse = httpClient.postForObject(SALE_ENDPOINT, entity, String.class);
 
-
-            if ("OK".equalsIgnoreCase(postResponse.trim())) {
-                // Transaction approved
-                clonedRequest.set(39, "00");
-            } else {
-                // Transaction declined
-                clonedRequest.set(39, "06");
+            ResponseEntity<String> rsp=httpClient.postForEntity(SALE_ENDPOINT, entity, String.class);
+            System.out.println("++++++++++RESPONCE CODE " +rsp.getStatusCode());
+            if (rsp.getStatusCode().value() == 201){
+                System.out.println("=====RESPONCE BODY==== "+rsp.getBody());
+                clonedRequest.set(39,"00");
             }
+            else{
+                clonedRequest.set(39,"06");
+            }
+
+
+//            if ("OK".equalsIgnoreCase(postResponse.trim())) {
+//                // Transaction approved
+//                clonedRequest.set(39, "00");
+//            } else {
+//                // Transaction declined
+//                clonedRequest.set(39, "06");
+//            }
 
         } catch (Exception ex) {
             Logger.getLogger(RequestListener.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);

@@ -7,7 +7,7 @@
     <channel class="org.jpos.iso.channel.NACChannel" packager="org.jpos.iso.packager.GenericPackager" header="60000000">
         <property name="packager-logger" value="Q2"/>
         <property name="packager-config" value="cfg/iso87binary.xml"/>
-        <property name="timeout" value="4000"/>
+        <property name="timeout" value="600000"/>
     </channel>
 
     <!--class="org.jpos.iso.IncomingListener"-->

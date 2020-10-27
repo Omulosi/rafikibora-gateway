@@ -22,6 +22,8 @@ public class PackagerTests {
         System.out.println("Send Money:" + msgString);
     }
 
+
+
     @Test
     public void testDepositMoney() throws Exception {
         ISOMsg msg = new ISOMsg("0200");
