@@ -16,6 +16,7 @@ public class HttpClient {
 
     /**
      * Send data via POST method
+     *
      * @param url
      * @param data
      * @return
@@ -36,6 +37,7 @@ public class HttpClient {
 
     /**
      * Send data via POST method
+     *
      * @param url
      * @param data
      * @return
@@ -56,6 +58,7 @@ public class HttpClient {
 
     /**
      * Fetch data
+     *
      * @param url
      * @return
      */

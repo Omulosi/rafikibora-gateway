@@ -16,7 +16,7 @@ public class AuthProcessorImpl implements AuthProcessor {
     /**
      * Process authentication requests
      *
-     * @param request FROM pos
+     * @param request ISO msg from remote client
      * @return isoMsg
      */
     @Override

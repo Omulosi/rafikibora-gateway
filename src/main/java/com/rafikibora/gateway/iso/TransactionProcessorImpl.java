@@ -53,7 +53,7 @@ public class TransactionProcessorImpl implements TransactionProcessor {
             headers.set("Authorization", "Bearer " + token);
 
 
-            // Send transactional data to the backend
+            // Send transaction data to the backend
             HttpEntity<Map<String, Object>> entity = new HttpEntity<>(transactionData, headers);
             RestTemplate httpClient = new RestTemplate();
             String postResponse = httpClient.postForObject(SEND_MONEY_ENDPOINT, entity, String.class);
